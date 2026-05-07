@@ -52,17 +52,26 @@ async function main() {
       analyzed.push(old);
       continue;
     }
+    const relevant = await isRelevantForMarketers(item);
+    if (!relevant) {
+      console.log(`  Skip (not relevant): ${item.title.slice(0, 40)}`);
+      continue;
+    }
     analyzed.push(await analyzeItem(item));
   }
 
   const merged = dedupeByTitleAndSource(dedupeByUrl([...analyzed, ...existing]))
     .map((item) => ({ ...item, title: cleanSourceTitle(item.title, { name: item.sourceName }) }))
+    .map((item) => rescoreItem(item))
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
     .slice(0, MAX_ITEMS);
+
+  const dailySummary = await generateDailySummary(merged);
 
   const payload = {
     generatedAt: new Date().toISOString(),
     mode: hasAiKey() ? "ai" : "rules",
+    dailySummary,
     sources: sources.map(({ name, tier, type, feedUrl }) => ({ name, tier, type, feedUrl })),
     items: merged
   };
@@ -154,9 +163,16 @@ function extractNearbyDate(html, href) {
   const index = html.indexOf(href);
   if (index < 0) return "";
   const slice = html.slice(Math.max(0, index - 500), Math.min(html.length, index + 500));
-  const match = slice.match(/20\d{2}[-/.年]\d{1,2}[-/.月]\d{1,2}(?:\s+\d{1,2}:\d{2})?/);
-  if (!match) return "";
-  return match[0].replace("年", "-").replace("月", "-").replace("日", "");
+  const candidates = [...slice.matchAll(/20\d{2}[-年]\d{1,2}[-月]\d{1,2}日?(?:\s+\d{1,2}:\d{2})?/g)];
+  for (const m of candidates) {
+    const charBefore = slice[m.index - 1] || "";
+    if (charBefore === "/" || charBefore === "=") continue;
+    const raw = m[0].replace("年", "-").replace("月", "-").replace("日", "");
+    const parsed = new Date(raw);
+    if (Number.isNaN(parsed.getTime())) continue;
+    return raw;
+  }
+  return "";
 }
 
 function normalizeEntry(entry, source) {
@@ -206,6 +222,72 @@ function cleanSourceTitle(title, source) {
   return next.trim();
 }
 
+async function isRelevantForMarketers(item) {
+  if (!hasAiKey()) return isMarketingRelated(item);
+  try {
+    const endpoint = aiEndpoint();
+    const apiKey = aiKey();
+    const prompt = [
+      "你是营销行业信息筛选员。判断以下内容是否对营销从业者有参考价值。",
+      "营销从业者关心：品牌营销案例、广告创意、消费者洞察、媒介投放、增长策略、行业趋势、平台政策变化、新品上市、代言联名、零售电商。",
+      "不关心：纯技术开发（API/SDK/代码）、纯科学研究、社会新闻、娱乐八卦、个人生活方式。",
+      "只回答 yes 或 no，不要解释。",
+      `标题：${item.title}`,
+      `来源：${item.sourceName}`,
+      `摘要：${item.summary}`
+    ].join("\n");
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "content-type": "application/json", "authorization": `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: AI_MODEL,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0,
+        max_tokens: 3
+      })
+    });
+    if (!response.ok) return true;
+    const data = await response.json();
+    const answer = (data.choices?.[0]?.message?.content || "").trim().toLowerCase();
+    return answer.startsWith("yes");
+  } catch {
+    return true;
+  }
+}
+
+async function generateDailySummary(items) {
+  if (!hasAiKey()) return "";
+  const featured = items.filter((i) => i.isFeatured).sort((a, b) => b.score - a.score).slice(0, 15);
+  if (!featured.length) return "";
+  const digest = featured.map((i) => `[${i.category}] ${i.title} — ${i.summary.slice(0, 60)}`).join("\n");
+  try {
+    const endpoint = aiEndpoint();
+    const apiKey = aiKey();
+    const prompt = [
+      "你是营销行业的资深编辑。根据今天的精选内容，写一段 150-200 字的'今日营销洞察'。",
+      "要求：提炼 2-3 个值得营销人关注的趋势或信号，用具体的品牌/事件/数据佐证，语气专业但不学术，像资深同事在早会上的 3 分钟分享。",
+      "不要用'总之'、'综上'结尾，不要列点，写成自然段落。",
+      "\n今日精选内容：",
+      digest
+    ].join("\n");
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "content-type": "application/json", "authorization": `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: AI_MODEL,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.5,
+        max_tokens: 400
+      })
+    });
+    if (!response.ok) return "";
+    const data = await response.json();
+    return (data.choices?.[0]?.message?.content || "").trim();
+  } catch {
+    return "";
+  }
+}
+
 async function analyzeItem(item) {
   if (hasAiKey()) {
     try {
@@ -225,6 +307,7 @@ async function analyzeWithAi(item) {
     "只返回 JSON，不要 Markdown。",
     "字段：category, summary, recommendation, tags, entities, scores。",
     "category 必须是：平台动态、品牌案例、行业趋势、报告数据、创意观点 之一。",
+    "summary 要求：2-3句话，必须具体说明'谁做了什么、怎么做的、结果如何'，不要泛泛概括。如果原文标题已经说清楚了，就在此基础上补充关键细节（数据、方法、品牌名）。禁止出现'探讨了…'、'分析了…'这类空洞表述。",
     "scores 包含 spread, reusable, commercial, freshness, credibility，分数 0-100。",
     `标题：${item.title}`,
     `来源：${item.sourceName} (${item.sourceTier})`,
@@ -272,6 +355,36 @@ function analyzeWithRules(item) {
   });
 }
 
+function rescoreItem(item) {
+  const category = item.category;
+  const scores = item.scores || {};
+  const baseScore = (scores.spread || 60) * 0.22 + (scores.reusable || 60) * 0.24 + (scores.commercial || 60) * 0.28 + (scores.freshness || 60) * 0.14 + (scores.credibility || 60) * 0.12;
+  const finalScore = Math.round(baseScore * tierWeight(item.sourceTier) * contentTypeMultiplier(item, category));
+  const score = Math.min(99, finalScore);
+  return { ...item, score, isFeatured: score >= featuredThreshold(category) };
+}
+
+function contentTypeMultiplier(item, category) {
+  const text = `${item.title} ${item.summary} ${(item.tags || []).join(" ")}`.toLowerCase();
+  const technicalSignals = [
+    "api", "developer", "sdk", "structured data", "data api",
+    "wordpress", "bot", "server", "conversion reporting",
+    "google analytics data api"
+  ];
+  const marketingValueSignals = [
+    "品牌", "案例", "campaign", "消费者", "consumer",
+    "洞察", "insight", "创意", "creative", "增长",
+    "联名", "代言", "社媒", "creator", "retail",
+    "world cup", "母亲节", "新品", "品牌营销"
+  ];
+  let multiplier = 1;
+  if (technicalSignals.some((word) => text.includes(word))) multiplier -= 0.18;
+  if (marketingValueSignals.some((word) => text.includes(word))) multiplier += 0.12;
+  if (category === "品牌案例" || category === "创意观点") multiplier += 0.08;
+  if (item.sourceName === "Google Ads Developer Blog") multiplier -= 0.12;
+  return Math.max(0.72, Math.min(1.18, multiplier));
+}
+
 function finalizeItem(item, analysis) {
   const scores = {
     spread: clampScore(analysis.scores?.spread),
@@ -280,9 +393,9 @@ function finalizeItem(item, analysis) {
     freshness: clampScore(analysis.scores?.freshness ?? freshnessScore(item.publishedAt)),
     credibility: clampScore(analysis.scores?.credibility ?? credibilityScore(item.sourceTier))
   };
-  const baseScore = scores.spread * 0.22 + scores.reusable * 0.24 + scores.commercial * 0.28 + scores.freshness * 0.14 + scores.credibility * 0.12;
-  const finalScore = Math.round(baseScore * tierWeight(item.sourceTier));
   const category = categories.includes(analysis.category) ? analysis.category : item.category;
+  const baseScore = scores.spread * 0.22 + scores.reusable * 0.24 + scores.commercial * 0.28 + scores.freshness * 0.14 + scores.credibility * 0.12;
+  const finalScore = Math.round(baseScore * tierWeight(item.sourceTier) * contentTypeMultiplier(item, category));
 
   return {
     ...item,
@@ -351,16 +464,16 @@ function recommendationFor(category) {
 
 function featuredThreshold(category) {
   return {
-    "平台动态": 72,
-    "品牌案例": 76,
-    "行业趋势": 76,
+    "平台动态": 76,
+    "品牌案例": 72,
+    "行业趋势": 74,
     "报告数据": 74,
-    "创意观点": 78
-  }[category] || 76;
+    "创意观点": 72
+  }[category] || 74;
 }
 
 function tierWeight(tier) {
-  return { T1: 1.12, "T1.5": 1.04, T2: 0.94 }[tier] || 1;
+  return { T1: 1.04, "T1.5": 1.02, T2: 1.0 }[tier] || 1;
 }
 
 function credibilityScore(tier) {

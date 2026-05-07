@@ -14,14 +14,16 @@
           <button class="nav-btn active" data-view="featured">精选</button>
           <button class="nav-btn" data-view="all">全部动态</button>
           <button class="nav-btn" data-view="daily">营销日报</button>
-          <button class="nav-btn" data-view="cases">案例爆文</button>
+          <button class="nav-btn" data-view="fmcg">快消</button>
+          <button class="nav-btn" data-view="baby">母婴</button>
+          <button class="nav-btn" data-view="tech3c">3C</button>
           <button class="nav-btn" data-view="about">关于</button>
         </nav>
         <span class="login-placeholder" aria-hidden="true">登录</span>
       </div>
     </header>
 
-    <div class="demo-banner" id="dataStatus">Prototype · 当前内容为示例数据，链接仅用于来源参考</div>
+    <div class="demo-banner" id="dataStatus"></div>
 
     <main class="container">
       <!-- 全局筛选区：精选 + 全部动态 共用 -->
@@ -66,13 +68,31 @@
         <div class="daily-grid" id="dailyGrid"></div>
       </section>
 
-      <!-- 案例爆文页 -->
-      <section class="view" id="casesView">
+      <!-- 快消专区 -->
+      <section class="view" id="fmcgView">
         <div class="view-header">
-          <h1 class="view-title">案例爆文</h1>
-          <p class="view-desc">适合拆解的公众号、媒体、品牌案例文章</p>
+          <h1 class="view-title">快消专区</h1>
+          <p class="view-desc">食品饮料、日化、美妆个护等快消行业动态</p>
         </div>
-        <div class="timeline" id="casesTimeline"></div>
+        <div class="timeline" id="fmcgTimeline"></div>
+      </section>
+
+      <!-- 母婴专区 -->
+      <section class="view" id="babyView">
+        <div class="view-header">
+          <h1 class="view-title">母婴专区</h1>
+          <p class="view-desc">母婴、童装、亲子、教育等行业动态</p>
+        </div>
+        <div class="timeline" id="babyTimeline"></div>
+      </section>
+
+      <!-- 3C专区 -->
+      <section class="view" id="tech3cView">
+        <div class="view-header">
+          <h1 class="view-title">3C专区</h1>
+          <p class="view-desc">手机、数码、家电、消费电子行业动态</p>
+        </div>
+        <div class="timeline" id="tech3cTimeline"></div>
       </section>
 
       <!-- 关于页 -->
@@ -81,26 +101,16 @@
           <h1 class="view-title">关于营销雷达</h1>
           <div class="about-sections">
             <div class="about-block">
-              <h3>为什么做</h3>
-              <p>营销人每天面对分散在数十个平台的信息流，优质内容被噪音淹没。营销雷达用 AI 评分 + 规则引擎自动筛选，帮你从海量信息中挑出值得关注的品牌案例、平台变化、行业趋势和创意观点。</p>
+              <h3>这是什么</h3>
+              <p>AI 驱动的营销情报聚合工具，自动抓取、评分、筛选高价值营销内容。</p>
             </div>
             <div class="about-block">
-              <h3>监控哪些信源</h3>
-              <p><strong>T1 官方/一手：</strong>小红书商业化、巨量引擎、阿里妈妈、腾讯广告、TikTok Shop Academy、Google Ads Blog 等。</p>
-              <p><strong>T1.5 数据/研究：</strong>Kantar、NielsenIQ、McKinsey、QuestMobile、CBNData 等。</p>
-              <p><strong>T2 媒体/KOL：</strong>SocialBeta、广告门、Morketing、刀法、品牌星球、Campaign Asia 等。</p>
-            </div>
-            <div class="about-block">
-              <h3>如何评分</h3>
-              <p>模型输出五维评分（传播价值、借鉴价值、商业影响、新鲜度、信源可信度），最终是否精选由代码公式决定，不由模型直接判断。</p>
-            </div>
-            <div class="about-block">
-              <h3>当前阶段</h3>
-              <p>第一版先验证信息流和筛选体验，后续接入真实抓取与 AI 评分。</p>
+              <h3>信息来源</h3>
+              <p>SocialBeta · 数英 · Morketing · Marketing Dive · Think with Google · Google Ads Blog · Adweek · MarTech · Search Engine Land</p>
             </div>
             <div class="about-block">
               <h3>反馈</h3>
-              <p>反馈入口即将开放，敬请期待。</p>
+              <p>意见或建议请发邮件至 <a href="mailto:gavin.xu@wppmedia.com">gavin.xu@wppmedia.com</a></p>
             </div>
           </div>
         </div>

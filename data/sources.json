@@ -72,5 +72,21 @@
     "type": "营销媒体",
     "categoryHint": "平台动态",
     "feedUrl": "https://searchengineland.com/feed"
+  },
+  {
+    "name": "36氪",
+    "handle": "@36kr",
+    "tier": "T2",
+    "type": "科技商业",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://www.36kr.com/feed"
+  },
+  {
+    "name": "爱范儿",
+    "handle": "@ifanr",
+    "tier": "T2",
+    "type": "科技媒体",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://www.ifanr.com/feed"
   }
 ]

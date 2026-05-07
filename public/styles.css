@@ -435,6 +435,28 @@ h1, h2, h3, h4, p { margin: 0; }
   gap: 16px;
 }
 
+.daily-summary {
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  grid-column: 1 / -1;
+}
+
+.daily-summary h3 {
+  font-size: 15px;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.daily-summary p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+}
+
 .daily-section {
   background: var(--surface);
   border: 1px solid var(--border);

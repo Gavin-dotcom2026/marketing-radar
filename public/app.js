@@ -545,6 +545,7 @@ const demoItems = [
 
 let items = demoItems;
 let dataMode = "demo";
+let dailySummary = "";
 
 const state = {
   view: "featured",
@@ -572,6 +573,7 @@ async function loadLiveData() {
     if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("empty items");
     items = payload.items;
     dataMode = "live";
+    dailySummary = payload.dailySummary || "";
     const generatedAt = payload.generatedAt ? new Date(payload.generatedAt) : null;
     const modeLabel = payload.mode === "ai" ? "AI 分析" : "规则分析";
     $("#dataStatus").textContent = generatedAt
@@ -635,17 +637,29 @@ function updateControlsVisibility() {
   $("#globalControls").style.display = show ? "" : "none";
 }
 
+
 function renderView() {
   switch (state.view) {
     case "featured": renderTimeline("featuredTimeline", getFiltered(true)); break;
     case "all": renderTimeline("allTimeline", getFiltered(false)); break;
     case "daily": renderDaily(); break;
-    case "cases": renderCases(); break;
+    case "fmcg": renderIndustry("fmcg", "fmcgTimeline"); break;
+    case "baby": renderIndustry("baby", "babyTimeline"); break;
+    case "tech3c": renderIndustry("tech3c", "tech3cTimeline"); break;
   }
 }
 
+function ageHours(iso) {
+  return Math.max(0, (Date.now() - new Date(iso).getTime()) / 36e5);
+}
+
+function displayRank(item) {
+  const freshness = Math.max(0, 100 - ageHours(item.publishedAt) * 0.8);
+  return item.score * 0.82 + freshness * 0.18;
+}
+
 function getFiltered(onlyFeatured) {
-  return items.filter((item) => {
+  const filtered = items.filter((item) => {
     if (onlyFeatured && !item.isFeatured) return false;
     if (state.category !== "全部" && item.category !== state.category) return false;
     if (state.tier !== "all" && item.sourceTier !== state.tier) return false;
@@ -654,7 +668,11 @@ function getFiltered(onlyFeatured) {
       if (!hay.includes(state.search)) return false;
     }
     return true;
-  }).sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+  });
+  if (onlyFeatured) {
+    return filtered.sort((a, b) => displayRank(b) - displayRank(a));
+  }
+  return filtered.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 }
 
 function renderFilters() {
@@ -763,7 +781,16 @@ function renderCard(item) {
 
 function renderDaily() {
   const cats = categories.slice(1);
-  $("#dailyGrid").innerHTML = cats.map((cat) => {
+  let summaryHtml = '';
+  if (dailySummary) {
+    summaryHtml = `
+      <div class="daily-summary">
+        <h3>今日营销洞察</h3>
+        <p>${dailySummary}</p>
+      </div>
+    `;
+  }
+  $("#dailyGrid").innerHTML = summaryHtml + cats.map((cat) => {
     const group = items.filter((i) => i.category === cat && i.isFeatured).sort((a, b) => b.score - a.score).slice(0, 5);
     return `
       <section class="daily-section">
@@ -779,9 +806,32 @@ function renderDaily() {
   }).join('');
 }
 
-function renderCases() {
-  const cases = items.filter((i) => i.category === "品牌案例" || i.category === "创意观点").sort((a, b) => b.score - a.score);
-  renderTimeline("casesTimeline", cases);
+const industryKeywords = {
+  fmcg: ["食品", "饮料", "日化", "美妆", "个护", "护肤", "洗护", "零食", "乳制品", "啤酒", "白酒", "茶饮", "咖啡", "奶茶", "可口可乐", "百事", "宝洁", "联合利华", "欧莱雅", "雀巢", "伊利", "蒙牛", "农夫山泉", "元气森林", "喜茶", "瑞幸", "星巴克", "蜜雪冰城", "奈雪", "茉莉奶白", "每日黑巧", "青岛啤酒", "金典", "安慕希", "美年达", "coca-cola", "pepsi", "unilever", "p&g", "nestlé", "nestle", "starbucks", "fmcg", "cpg", "snack", "dairy", "skincare"],
+  baby: ["母婴", "童装", "亲子", "育儿", "婴儿", "奶粉", "婴配粉", "纸尿裤", "童鞋", "儿童", "早教", "玩具", "孕产", "贝拉米", "飞鹤", "泰兰尼斯", "好奇", "帮宝适", "巴拉巴拉", "乐高", "infant", "toddler", "maternity", "diaper", "lego", "pampers"],
+  tech3c: ["手机", "数码", "家电", "笔记本", "平板", "耳机", "芯片", "半导体", "新能源汽车", "电动车", "华为", "小米", "OPPO", "vivo", "三星", "索尼", "戴森", "大疆", "特斯拉", "蔚来", "理想汽车", "比亚迪", "iphone", "samsung", "xiaomi", "huawei", "sony", "dyson", "tesla", "smartphone", "qualcomm", "智能手机", "智能家居"]
+};
+
+const industryExclude = {
+  baby: ["toyota", "汽车", "ev push", "电动车"],
+  tech3c: ["beverage", "beer", "unilever", "ab inbev", "啤酒", "饮料", "food", "dollar general", "streaming", "linkedin", "cmo", "agentic ai", "a/b test", "email"],
+  fmcg: []
+};
+
+function filterByIndustry(industry) {
+  const keywords = industryKeywords[industry] || [];
+  const exclude = industryExclude[industry] || [];
+  return items.filter((item) => {
+    const hay = [item.title, item.summary, ...(item.tags || []), ...(item.entities || [])].join(" ").toLowerCase();
+    if (!keywords.some((kw) => hay.includes(kw.toLowerCase()))) return false;
+    if (exclude.some((ex) => hay.includes(ex.toLowerCase()))) return false;
+    return true;
+  }).sort((a, b) => b.score - a.score);
+}
+
+function renderIndustry(industry, containerId) {
+  const list = filterByIndustry(industry);
+  renderTimeline(containerId, list);
 }
 
 init();
