@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>营销雷达 Marketing Radar</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="logo" href="#"><span class="logo-mark">MH</span><span class="logo-text">MARKETING<b>HOT</b></span></a>
+        <nav class="nav" aria-label="主要栏目">
+          <button class="nav-btn active" data-view="featured">精选</button>
+          <button class="nav-btn" data-view="all">全部动态</button>
+          <button class="nav-btn" data-view="daily">营销日报</button>
+          <button class="nav-btn" data-view="cases">案例爆文</button>
+          <button class="nav-btn" data-view="about">关于</button>
+        </nav>
+        <span class="login-placeholder" aria-hidden="true">登录</span>
+      </div>
+    </header>
+
+    <div class="demo-banner">Prototype · 当前内容为示例数据，链接仅用于来源参考</div>
+
+    <main class="container">
+      <!-- 全局筛选区：精选 + 全部动态 共用 -->
+      <div class="global-controls" id="globalControls">
+        <div class="controls-row">
+          <input id="searchInput" type="search" placeholder="搜索标题/摘要/品牌/平台..." />
+          <select id="tierFilter" aria-label="信源等级">
+            <option value="all">全部信源</option>
+            <option value="T1">T1 官方/一手</option>
+            <option value="T1.5">T1.5 数据/机构</option>
+            <option value="T2">T2 媒体/KOL</option>
+          </select>
+          <button class="clear-btn" id="clearBtn" style="display:none">清空</button>
+        </div>
+        <div class="filter-bar" id="categoryFilters"></div>
+      </div>
+
+      <!-- 精选页 -->
+      <section class="view active" id="featuredView">
+        <div class="view-header">
+          <h1 class="view-title">精选</h1>
+          <p class="view-desc">AI 自动挑选的高价值营销内容</p>
+        </div>
+        <div class="timeline" id="featuredTimeline"></div>
+      </section>
+
+      <!-- 全部动态页 -->
+      <section class="view" id="allView">
+        <div class="view-header">
+          <h1 class="view-title">全部营销动态</h1>
+          <p class="view-desc">所有抓取内容，包括未达精选阈值的条目</p>
+        </div>
+        <div class="timeline" id="allTimeline"></div>
+      </section>
+
+      <!-- 营销日报页 -->
+      <section class="view" id="dailyView">
+        <div class="view-header">
+          <h1 class="view-title">营销日报</h1>
+          <p class="view-desc">每日自动汇总，按类别分组</p>
+        </div>
+        <div class="daily-grid" id="dailyGrid"></div>
+      </section>
+
+      <!-- 案例爆文页 -->
+      <section class="view" id="casesView">
+        <div class="view-header">
+          <h1 class="view-title">案例爆文</h1>
+          <p class="view-desc">适合拆解的公众号、媒体、品牌案例文章</p>
+        </div>
+        <div class="timeline" id="casesTimeline"></div>
+      </section>
+
+      <!-- 关于页 -->
+      <section class="view" id="aboutView">
+        <div class="about-content">
+          <h1 class="view-title">关于营销雷达</h1>
+          <div class="about-sections">
+            <div class="about-block">
+              <h3>为什么做</h3>
+              <p>营销人每天面对分散在数十个平台的信息流，优质内容被噪音淹没。营销雷达用 AI 评分 + 规则引擎自动筛选，帮你从海量信息中挑出值得关注的品牌案例、平台变化、行业趋势和创意观点。</p>
+            </div>
+            <div class="about-block">
+              <h3>监控哪些信源</h3>
+              <p><strong>T1 官方/一手：</strong>小红书商业化、巨量引擎、阿里妈妈、腾讯广告、TikTok Shop Academy、Google Ads Blog 等。</p>
+              <p><strong>T1.5 数据/研究：</strong>Kantar、NielsenIQ、McKinsey、QuestMobile、CBNData 等。</p>
+              <p><strong>T2 媒体/KOL：</strong>SocialBeta、广告门、Morketing、刀法、品牌星球、Campaign Asia 等。</p>
+            </div>
+            <div class="about-block">
+              <h3>如何评分</h3>
+              <p>模型输出五维评分（传播价值、借鉴价值、商业影响、新鲜度、信源可信度），最终是否精选由代码公式决定，不由模型直接判断。</p>
+            </div>
+            <div class="about-block">
+              <h3>当前阶段</h3>
+              <p>第一版先验证信息流和筛选体验，后续接入真实抓取与 AI 评分。</p>
+            </div>
+            <div class="about-block">
+              <h3>反馈</h3>
+              <p>反馈入口即将开放，敬请期待。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
