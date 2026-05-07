@@ -1,0 +1,1800 @@
+{
+  "generatedAt": "2026-05-07T04:00:32.328Z",
+  "mode": "rules",
+  "sources": [
+    {
+      "name": "Marketing Dive",
+      "tier": "T2",
+      "type": "营销媒体",
+      "feedUrl": "https://www.marketingdive.com/feeds/news/"
+    },
+    {
+      "name": "Google Ads Developer Blog",
+      "tier": "T1",
+      "type": "平台官方",
+      "feedUrl": "https://ads-developers.googleblog.com/feeds/posts/default?alt=rss"
+    },
+    {
+      "name": "Think with Google",
+      "tier": "T1",
+      "type": "平台官方",
+      "feedUrl": "https://www.thinkwithgoogle.com/rss.xml"
+    }
+  ],
+  "items": [
+    {
+      "id": "45c11b138479",
+      "title": "Target’s digital chief breaks down the retailer’s creator overhaul",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T08:00:00.000Z",
+      "category": "创意观点",
+      "score": 68,
+      "isFeatured": false,
+      "summary": "Sarah Travis details two new offerings designed for the social commerce boom and addresses frustration with the wind down of a prior affiliate program.&nbsp;",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "AI营销",
+        "社媒",
+        "电商"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/targets-digital-chief-breaks-down-the-retailers-creator-overhaul/819368/",
+      "scores": {
+        "spread": 70,
+        "reusable": 62,
+        "commercial": 72,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "1bb2ce00705e",
+      "title": "How WPP Media is transforming planning and performance on YouTube with AI",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 77,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how WPP Media is transforming campaign planning and performance on YouTube with AI.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.thinkwithgoogle.com/marketing-strategies/video/wpp-youtube-planning-performance-with-ai/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "8c30fb9c3b60",
+      "title": "Introducing Partial Structured Data File Upload",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-05-05T18:04:00.000Z",
+      "category": "报告数据",
+      "score": 76,
+      "isFeatured": true,
+      "summary": "Today we’re introducing Partial Structured Data File Upload to Display & Video 360! This new capability allows you to upload Line Item Structured Data Files (SDFs) that only includ",
+      "recommendation": "适合进入日报和趋势库，用于支撑策略判断、提案和客户沟通。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/05/introducing-partial-structured-data.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "2059861601cf",
+      "title": "Lay’s World Cup marketing strategy focuses on ‘scaled intimacy’ with fans",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T14:30:00.000Z",
+      "category": "行业趋势",
+      "score": 65,
+      "isFeatured": false,
+      "summary": "Along with star-studded ads anchored on a real watch party, the brand is hosting a 4 million followers-strong WhatsApp group to drive connection.&nbsp;",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "广告产品",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/lays-world-cup-marketing-focuses-on-scaled-intimacy-with-fans/819306/",
+      "scores": {
+        "spread": 58,
+        "reusable": 74,
+        "commercial": 66,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "59f31c338a2f",
+      "title": "Toyota merges four distinct campaigns in EV push",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T13:23:35.000Z",
+      "category": "品牌案例",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "From singing puppets to inspirational small business stories, the brand is attempting to cover as many bases as possible as EV sales increase.",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "AI营销",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/toyota-merges-four-distinct-campaigns-in-ev-push/819307/",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "6bfa47102d5e",
+      "title": "Why American Family Insurance made a reality competition series for Hulu",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T11:00:00.000Z",
+      "category": "品牌案例",
+      "score": 63,
+      "isFeatured": false,
+      "summary": "CMO Sherina Smith explains how &ldquo;Designed To Last&rdquo; taps into streaming TV behaviors and allows the brand to engage more deeply with consumers.",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "AI营销",
+        "消费者趋势",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/why-american-family-insurance-made-a-reality-competition-series-for-hulu/819093/",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "41786f44c6a3",
+      "title": "Dollar General bridges onsite, offsite retail media with new solution",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T15:21:00.000Z",
+      "category": "行业趋势",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "Brands will be able to activate and optimize offsite and onsite inventory within The Trade Desk for the first time through an integration supported by Kevel.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销",
+        "电商",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/dollar-general-bridges-onsite-offsite-retail-media-with-new-solution/819190/",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "3764256252e2",
+      "title": "Inside Opal’s attempt to reduce AI’s ‘alignment tax’ for marketers",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T15:00:00.000Z",
+      "category": "平台动态",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "The planning platform's new AI copilot, Gem, is designed to align campaign data with overall strategy and help teams understand results faster.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/inside-opals-attempt-to-reduce-ais-alignment-tax-for-marketers/818388/",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "211e24aa22cb",
+      "title": "DoorDash delivers memes, reality TV moms for Mother’s Day campaign",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T14:21:00.000Z",
+      "category": "创意观点",
+      "score": 65,
+      "isFeatured": false,
+      "summary": "A hero spot and social content spotlight the mom group chat as part of an effort that includes deals with Ulta, Old Navy and more.",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "AI营销",
+        "社媒",
+        "内容营销",
+        "品牌"
+      ],
+      "entities": [
+        "DoorDash delivers memes"
+      ],
+      "originalUrl": "https://www.marketingdive.com/news/doordash-delivers-memes-reality-tv-moms-for-mothers-day-campaign/819175/",
+      "scores": {
+        "spread": 70,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "cbe95fcb497a",
+      "title": "Omnicom credits Q1 wins to core operations, reaffirms ongoing cost cuts",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T13:54:00.000Z",
+      "category": "平台动态",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "The company also touted the success of its AI-powered Omni marketing platform, which has now been scaled across the entire organization.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "reaffirms ongoing cost cuts"
+      ],
+      "originalUrl": "https://www.marketingdive.com/news/omnicom-credits-q1-wins-to-core-operations-reaffirms-ongoing-cost-cuts/819157/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "57cf0ad7dc5e",
+      "title": "How Qualcomm is building an iconic consumer brand for the AI era",
+      "sourceName": "Marketing Dive",
+      "sourceHandle": "@marketingdive",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T12:00:00.000Z",
+      "category": "品牌案例",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "CMO Don McGuire details the tech giant&rsquo;s work to develop consumer brand Snapdragon, which culminates in a new campaign by 72andSunny.",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "AI营销",
+        "消费者趋势",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.marketingdive.com/news/how-qualcomm-is-building-an-iconic-consumer-brand-for-the-ai-era/819041/",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "2f51ffe3f9ef",
+      "title": "New Data Retention Policy for Google Ads starting June 1, 2026",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-05-02T00:40:17.036Z",
+      "category": "平台动态",
+      "score": 76,
+      "isFeatured": true,
+      "summary": "table#dataretensionmay2026{ border-collapse: collapse; } table#dataretensionmay2026 td { border: 1px solid grey; padding:5px; } Starting June 1, 2026 , Google Ads and related measu",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "2026"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/05/new-data-retention-policy-for-google.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 74,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "d6c8b95a54bb",
+      "title": "Product reporting changes for Google Ads starting June 15, 2026",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-30T14:47:00.000Z",
+      "category": "平台动态",
+      "score": 76,
+      "isFeatured": true,
+      "summary": "Starting June 15, 2026, the Google Ads API will begin transitioning product reporting to include data from all Performance Max networks. This update also provides comprehensive per",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "2026"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/product-reporting-changes-for-google.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 74,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "fa5223aa810e",
+      "title": "Google Ads API v20 sunset reminder",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-29T17:47:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "Google Ads API v20 will sunset on June 10, 2026. Starting on this date, all v20 API requests will begin to fail. Migrate to a newer version prior to June 10, 2026 to ensure your AP",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/google-ads-api-v20-sunset-reminder.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "f2db61263879",
+      "title": "How one retailer used AI to turn ‘out-of-stock’ into in-store traffic",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-27T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 75,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how The Salvation Army used AI to drive store visits in an innovative retail campaign.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销",
+        "电商",
+        "品牌"
+      ],
+      "entities": [
+        "of",
+        "stock’ into in",
+        "store traffic"
+      ],
+      "originalUrl": "https://www.thinkwithgoogle.com/marketing-strategies/automation/salvation-army-ai-retail-campaign/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "f532e980dfa9",
+      "title": "From post-mortem to pulse: Why measurement is the CMO’s new growth engine",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-27T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 74,
+      "isFeatured": false,
+      "summary": "Google's Official Digital Marketing Publication. Discover why measurement is the CMO’s new growth engine and the transformative power of AI tools.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "From post",
+        "mortem to pulse"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/marketing-measurement-ai-tools/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "7e9566ae266e",
+      "title": "Simplifying Keyword Forecast Metrics in Google Ads API v24",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-23T16:40:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "To provide a more streamlined and reliable experience, we have unified our forecasting infrastructure. Google Ads API v24 introduces an updated GenerateKeywordForecastMetrics metho",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/simplifying-keyword-forecast-metrics-in.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "be13a0b52688",
+      "title": "Announcing v24 of the Google Ads API",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-22T21:24:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "Today, we’re announcing the v24 release of the Google Ads API . To use the new v24 features, you must upgrade your client libraries and client code. All the updated client librarie",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/announcing-v24-of-google-ads-api.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "3c9de35bc8b9",
+      "title": "How Bombas scaled creator partnerships to capture 90% net-new customers",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 75,
+      "isFeatured": false,
+      "summary": "Google's Official Digital Marketing Publication. Discover how Bombas scaled creator media and YouTube integrations to drive net-new customer acquisition.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "社媒"
+      ],
+      "entities": [
+        "new customers"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/bombas-scaled-creator-media-youtube-integrations/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "9486710d5563",
+      "title": "Welcome to the YouTube Era",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 75,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Explore the YouTube Era and how brands can unlock new marketing opportunities with creators and AI.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "社媒",
+        "品牌"
+      ],
+      "entities": [
+        "Welcome to the YouTube Era"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/youtube-era-marketing-opportunities/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "b57ca3614c11",
+      "title": "Multi-factor authentication requirement for the Google Ads API",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-17T13:41:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "As part of improving security for Google Ads accounts, the Google Ads API will start requiring Multi-factor authentication (MFA) for Google Ads API users. These important security",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "Multi"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/multi-factor-authentication-requirement.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "5b14f154b416",
+      "title": "Ads DevCast E3: Improving your Advertising Workflows",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-16T16:51:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "Improving your Advertising Workflows It’s an incredible time to be a developer in the advertising space. Innovation is moving at a breakneck pace, and we’re shifting from increment",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "Ads DevCast E3"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/ads-devcast-e3-improving-your.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "fd1d94108a9f",
+      "title": "Agentic AI means marketing leaders must now be ‘systems thinkers’",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Discover Jim Lecinski’s take on agentic AI and how marketing leaders must now be ‘systems thinkers.’",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/agentic-ai-marketing-leaders-as-systems-thinkers/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "8f95c10e2e96",
+      "title": "April 2026 update to Display & Video 360 API",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-14T16:42:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Today we’re announcing the April 2026 update to the Display & Video 360 API. This update includes the following: Support for additional Exchange and ThirdPartyVendor values. AdAsse",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/april-2026-update-to-display-video-360.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "deb19ad278e9",
+      "title": "Merchant API is coming to Google Ads scripts starting April 22, 2026",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-09T18:31:00.000Z",
+      "category": "平台动态",
+      "score": 78,
+      "isFeatured": true,
+      "summary": "The Content API for Shopping will sunset on August 18, 2026 , to be replaced by the Merchant API . This migration provides a shift toward more robust, scalable, and feature-rich in",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品",
+        "内容营销",
+        "电商"
+      ],
+      "entities": [
+        "2026"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/merchant-api-is-coming-to-google-ads.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 72,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "6eaace090749",
+      "title": "New Data Manager API channels on Discord",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-07T16:41:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "We're excited to announce the addition of new channels for the Data Manager API on our “Google Advertising and Measurement Community” Discord server. To join, just click this invit",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/new-data-manager-api-channels-on-discord.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 62,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "94fa40f16379",
+      "title": "Introducing the Google Advertising and Measurement Developers Hub!",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-06T20:57:00.000Z",
+      "category": "平台动态",
+      "score": 75,
+      "isFeatured": true,
+      "summary": "We're excited to announce the launch of the new Google Advertising and Measurement Developers Hub ! Come see the new site! Whether you're looking to automate campaigns, analyze per",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/introducing-google-advertising-and.html",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "209865ec95e1",
+      "title": "Beyond the rearview: How marketing leaders close the MMM ‘actionability gap’",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-06T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. See how leaders use marketing mix modeling for actionable insights to improve marketing ROI and measurement.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "消费者趋势"
+      ],
+      "entities": [
+        "Beyond the rearview"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/marketing-mix-modeling-measurement-roi/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "6896509721a2",
+      "title": "How Unilever taps YouTube creators and fandoms to drive brand ‘desire at scale’",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-06T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 77,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Explore this case study on Unilever’s reach strategy tapping YouTube creators and fandoms to drive brand desire.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "社媒",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/unilever-reach-strategy-drives-brand-desire/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 80,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "eef0705d0900",
+      "title": "Ads DevCast Episode 2: Audience Management",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-02T15:10:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Many to 1, Audience Management in Data Manager API In today's fast-paced digital landscape, managing multiple data pipelines can feel overwhelming. If you're a developer navigating",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "Ads DevCast Episode 2",
+        "Audience Management"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/04/ads-devcast-episode-2-audience.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "1bc64ea678ca",
+      "title": "5 podcasting tips for marketers in a video-first world",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Discover podcast tips to build a video-first strategy and drive marketing results.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "first world"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/podcast-tips-for-marketers/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "58c3bac76bfa",
+      "title": "7 marketing lessons from Google’s Media Lab",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google's Official Digital Marketing Publication. Discover seven lessons from Google’s Media Lab on AI in marketing and evolving marketing strategy for 2026.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/media-lab-marketing-lessons-2026/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "8d7d4b780541",
+      "title": "Pilots to performance: What CMOs can learn from Google’s efforts to scale AI",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Learn how CMOs turn AI pilots into scalable AI with a strategy that drives measurable business impact.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "Pilots to performance"
+      ],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/scalable-ai-pilot-strategy/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "c284738da348",
+      "title": "Unlocking growth: How Expedia Group redefined brand performance with Meridian",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 74,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. See how Expedia Group improved brand measurement and brand performance with a marketing mix model.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "Unlocking growth"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/brand-performance-measurement-marketing-mix-model/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "25ecadbd6e17",
+      "title": "The Science of Demand: Ads measurement in the AI Era",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-31T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "Google's official digital marketing publication. Learn how to build a modern marketing measurement framework using signals, metrics, and data.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品"
+      ],
+      "entities": [
+        "The Science of Demand"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/marketing-metrics/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 72,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "a5717542bbb8",
+      "title": "New Google Ad Manager API read-only scope",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-27T20:55:00.000Z",
+      "category": "平台动态",
+      "score": 70,
+      "isFeatured": false,
+      "summary": "The Ad Manager API now supports a read-only OAuth scope. This new scope, https://www.googleapis.com/auth/admanager.readonly , allows developers to request read-only access to their",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "only scope"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/new-google-ad-manager-api-read-only.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "7e6cb023aa82",
+      "title": "Increase in Batch Job Service Request Size",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-27T17:57:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Increased Request Limits for BatchJobService Enhance Large Asset Uploads We're pleased to announce significant increases to the request size limits for the BatchJobService.AddBatch",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/increase-in-batch-job-service-request.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "13469b09e79c",
+      "title": "From attention to action: Creator-led growth on YouTube",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-27T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how YouTube creator marketing fuels creator-led growth, turning attention into long-term ROI.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "社媒"
+      ],
+      "entities": [
+        "From attention to action",
+        "Creator",
+        "led growth on YouTube"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/youtube-creator-marketing-creator-led-growth/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "c383b1ff007c",
+      "title": "The 2026 marketer's guide: The rise of the super-empowered consumer",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-27T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 74,
+      "isFeatured": false,
+      "summary": "Discover how AI is transforming the customer journey and shaping marketing strategy. Download the guide to reach today’s super-empowered consumers.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销",
+        "消费者趋势"
+      ],
+      "entities": [
+        "The 2026 marketer's guide",
+        "The rise of the super",
+        "empowered consumer"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/ai-marketing-strategy-2026-guide/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "af90c48c7f74",
+      "title": "Upcoming Improvements to Offline Conversion Imports",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-26T16:25:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Starting in April, 2026 the Google Ads API will benefit from a series of infrastructure changes designed to improve the Offline Conversion Import experience. These upgrades will no",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/upcoming-improvements-to-offline.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "9f81818f7e1f",
+      "title": "Announcing v23.2 of the Google Ads API",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-25T21:59:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Today, we’re announcing the v23.2 release of the Google Ads API . To use the new v23.2 features, you must upgrade your client libraries and client code. All the updated client libr",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/announcing-v232-of-google-ads-api.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "fff0cc7ced5f",
+      "title": "Announcing new Display & Video 360 API Discord channels and a documentation update!",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-23T17:04:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Today we’re announcing two huge improvements for Display & Video 360 bulk tools. First, we are launching support for Display & Video 360 API , Structured Data Files , and Bid Manag",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/announcing-new-display-video-360-api.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "3ab0d55bcd5f",
+      "title": "Introducing: Ads DevCast",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-20T15:24:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "A new podcast for the ads technical community We are thrilled to announce the launch of Ads DevCast , a new bi-weekly vodcast and podcast series brought to you by Google’s Advertis",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "Introducing",
+        "Ads DevCast"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/introducing-ads-devcast.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "af1cbe14a077",
+      "title": "Beyond the prompt: 10 AI workflows to help CMOs lead with impact",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-20T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Explore 10 AI workflows helping CMOs streamline marketing automation and focus on higher-impact strategy.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "Beyond the prompt"
+      ],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/cmo-ai-workflows-marketing-automation/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "22c14789157c",
+      "title": "How Julian Shapiro-Barnum brings ‘kid energy’ to creator partnerships",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-20T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 73,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how Julian Shapiro-Barnum approaches creator and brand partnerships while maintaining audience trust.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "社媒",
+        "品牌"
+      ],
+      "entities": [
+        "How Julian Shapiro"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/julian-shapiro-barnum-creator-partnerships/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "36cf8d50f5aa",
+      "title": "Upcoming changes to Lookalike user lists in the Google Ads API, starting April 30, 2026",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-19T18:03:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Google Ads is committed to providing a reliable and efficient environment for all advertisers. To ensure that our systems remain stable and that resources are allocated fairly, we",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品"
+      ],
+      "entities": [
+        "starting April 30",
+        "2026"
+      ],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/upcoming-changes-to-lookalike-user.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "106f2eaae741",
+      "title": "How YouTube creators are redefining sports fandom",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-16T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 73,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Explore how sports creators are reshaping sports fandom and what it means for content creator marketing",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "社媒",
+        "内容营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/youtube-creators-redefining-sports-fandom/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "5ad70836577b",
+      "title": "Every CMO needs an AI marketing champion",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-16T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 70,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. See how ownership turns AI adoption into scalable, lasting progress in your organization.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/scaling-ai-adoption/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "766d1eb7a600",
+      "title": "How Virgin Voyages uses AI to send personalized postcards from tomorrow",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-12T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Google's Official Digital Marketing Publication. Discover how Virgin Voyages uses generative AI marketing to deliver AI at scale through personalized creative.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/generative-ai-personalization-at-scale/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "fd2b777b6766",
+      "title": "Customer-decision journeys are compressing. What does that mean for marketers?",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-05T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Explore how AI search is compressing the customer-decision journey and reshaping consumer insights.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "消费者趋势"
+      ],
+      "entities": [
+        "Customer"
+      ],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/customer-decision-journey-ai-search/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "2a1ca209045a",
+      "title": "The agency advantage: Rethinking ROI with a single source of truth",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-05T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 75,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Explore how agency partnership and a modern data strategy help brands rethink measurement ROI.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "The agency advantage"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/measurement-roi-agency-partnership-data-strategy/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 74,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "3104bc53b8ee",
+      "title": "Changes to Customer Match Support in the Google Ads API",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-03-04T16:46:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "Starting on April 1, 2026, the Google Ads API will no longer accept new adopters of Customer Match . As with our recent announcement for the use of session attributes and IP addres",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/03/changes-to-customer-match-support-in.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 72,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "e48f1c400195",
+      "title": "Minimum Budget Requirement for Demand Gen Campaigns",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-27T15:52:00.000Z",
+      "category": "平台动态",
+      "score": 74,
+      "isFeatured": true,
+      "summary": "Starting on April 1st, 2026, the Google Ads API will begin enforcing a minimum daily budget of 5 USD, or the equivalent in local currency, for all Demand Gen campaigns. This update",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/02/minimum-budget-requirement-for-demand.html",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "7a3c824b5a83",
+      "title": "Introducing Google Ads API Developer Assistant v2.0",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-26T17:24:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "This major update transforms the Assistant from a powerful code generation tool into a proactive troubleshooting and automation partner for Google Ads developers. Since our v1.6.0",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/02/introducing-google-ads-api-developer.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "5d92192b353d",
+      "title": "Additional changes for supporting European Union Political Ads Regulation in Google Ads API and Google Ads scripts",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-26T17:14:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "What’s changing? In 2025, Google rolled out changes to support the EU Political Ads Regulation in the Google Ads API and Google Ads scripts . On April 1, 2026 , we will change acco",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/02/additional-changes-for-supporting.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "a1b6eb079f36",
+      "title": "Addressing the growth gap: The hidden ROI of demand creation",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-26T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how improved ad attribution reveals the true marketing ROI of demand creation through long-term measurement.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "Addressing the growth gap"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/demand-creation-marketing-roi/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "06d48f96ecdc",
+      "title": "Announcing v23.1 of the Google Ads API",
+      "sourceName": "Google Ads Developer Blog",
+      "sourceHandle": "@googleadsdev",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-25T23:21:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Today, we’re announcing the v23.1 release of the Google Ads API . To use the new v23.1 features, you must upgrade your client libraries and client code. All the updated client libr",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "http://ads-developers.googleblog.com/2026/02/announcing-v231-of-google-ads-api.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "f3cc8f5676e8",
+      "title": "Win over your CFO: 9 steps Google Marketing took to partner with finance",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-25T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 74,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how Google’s marketing and finance teams use incrementality and measurement strategy to build trust.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "Win over your CFO"
+      ],
+      "originalUrl": "https://business.google.com/us/think/measurement/marketing-and-finance-incrementality-measurement-strategy/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "eb9000eda3b6",
+      "title": "The power of trust: Adam W & Jimmy John’s balance creativity and brand goals",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-20T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 73,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how creator collaboration and short-form video marketing advanced Jimmy John’s brand goals.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "社媒",
+        "品牌"
+      ],
+      "entities": [
+        "The power of trust"
+      ],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/creator-collaboration-short-form-video-brand-goals/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "b959e76e2587",
+      "title": "How leading brands are owning the new sports fan journey",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-20T00:00:00.000Z",
+      "category": "创意观点",
+      "score": 76,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. See how sports content creators are redefining sports culture through creator marketing.",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "社媒",
+        "内容营销",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/sports-content-creator-marketing-culture/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 70,
+        "reusable": 74,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "fa62dea783dd",
+      "title": "3 years of streaming leadership, 3 marketing opportunities for brands in 2026",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-19T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 73,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Explore marketing opportunities for brands to take on YouTube, from the creator economy to AI-powered tools.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "社媒",
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/search-and-video/youtube-marketing-brand-opportunities/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 64,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "47f9cd0d1e60",
+      "title": "How experimentation and incrementality testing reveal the true value of marketing",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-13T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 72,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Learn how marketing experimentation and incrementality testing help build a strong media planning strategy.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/measurement/marketing-experimentation-incrementality-testing/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "727414d198b2",
+      "title": "Build your AI future in partnership",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-13T00:00:00.000Z",
+      "category": "行业趋势",
+      "score": 70,
+      "isFeatured": false,
+      "summary": "Google’s Official Digital Marketing Publication. Discover how the right agency partner can unlock AI advantage for faster, smarter marketing.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/ai-advantage-agency-partnerships/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 94
+      }
+    },
+    {
+      "id": "de3a28c0af65",
+      "title": "What to expect in digital advertising and commerce in 2026",
+      "sourceName": "Think with Google",
+      "sourceHandle": "@thinkwithgoogle",
+      "sourceTier": "T1",
+      "sourceType": "平台官方",
+      "publishedAt": "2026-02-13T00:00:00.000Z",
+      "category": "平台动态",
+      "score": 72,
+      "isFeatured": true,
+      "summary": "Google’s Official Digital Marketing Publication. Get Vidhya Srinivasan’s take on 2026 digital advertising trends including AI in advertising and agentic commerce.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品",
+        "电商",
+        "消费者趋势"
+      ],
+      "entities": [],
+      "originalUrl": "https://business.google.com/us/think/ai-excellence/digital-advertising-trends-2026/?utm_source=twg-rss-reader&utm_medium=rss&utm_campaign=rss-feed",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 50,
+        "credibility": 94
+      }
+    }
+  ]
+}

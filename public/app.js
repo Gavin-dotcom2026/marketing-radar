@@ -1,6 +1,6 @@
 const categories = ["全部", "平台动态", "品牌案例", "行业趋势", "报告数据", "创意观点"];
 
-const items = [
+const demoItems = [
   {
     id: "item_001",
     title: "茉莉奶白来「支持」采茶阿姨了！",
@@ -543,6 +543,9 @@ const items = [
   }
 ];
 
+let items = demoItems;
+let dataMode = "demo";
+
 const state = {
   view: "featured",
   category: "全部",
@@ -552,12 +555,34 @@ const state = {
 
 const $ = (sel) => document.querySelector(sel);
 
-function init() {
+async function init() {
+  await loadLiveData();
   renderFilters();
   renderView();
   bindEvents();
   updateControlsVisibility();
   updateClearBtn();
+}
+
+async function loadLiveData() {
+  try {
+    const response = await fetch("./data.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("empty items");
+    items = payload.items;
+    dataMode = "live";
+    const generatedAt = payload.generatedAt ? new Date(payload.generatedAt) : null;
+    const modeLabel = payload.mode === "ai" ? "AI 分析" : "规则分析";
+    $("#dataStatus").textContent = generatedAt
+      ? `Live · ${modeLabel} · 最近更新 ${formatDateTime(generatedAt)}`
+      : `Live · ${modeLabel}`;
+  } catch (error) {
+    items = demoItems;
+    dataMode = "demo";
+    $("#dataStatus").textContent = "Prototype · 当前内容为示例数据，链接仅用于来源参考";
+    console.info(`Using demo data: ${error.message}`);
+  }
 }
 
 function bindEvents() {
@@ -662,6 +687,10 @@ function formatTime(iso) {
   return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 }
 
+function formatDateTime(date) {
+  return `${date.getMonth() + 1}月${date.getDate()}日 ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
+}
+
 function renderTimeline(containerId, list) {
   const container = $(`#${containerId}`);
   if (!list.length) {
@@ -726,7 +755,7 @@ function renderCard(item) {
       </div>
       <div class="card-footer">
         <span class="card-scores"><span>传播 ${item.scores.spread}</span><span>借鉴 ${item.scores.reusable}</span><span>商业 ${item.scores.commercial}</span><span>时效 ${item.scores.freshness}</span><span>可信 ${item.scores.credibility}</span></span>
-        <a class="card-link" href="${item.originalUrl}" target="_blank" rel="noreferrer">示例来源 →</a>
+        <a class="card-link" href="${item.originalUrl}" target="_blank" rel="noreferrer">${dataMode === "live" ? "原文" : "示例来源"} →</a>
       </div>
     </article>
   `;

@@ -1,0 +1,481 @@
+import { readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+
+const SOURCES_PATH = new URL("../data/sources.json", import.meta.url);
+const OUTPUT_PATH = new URL("../public/data.json", import.meta.url);
+const MAX_ITEMS = Number(process.env.MAX_ITEMS || 200);
+const AI_PROVIDER = process.env.AI_PROVIDER || inferAiProvider();
+const AI_MODEL = process.env.AI_MODEL || defaultModel(AI_PROVIDER);
+
+const categories = ["平台动态", "品牌案例", "行业趋势", "报告数据", "创意观点"];
+
+const keywordRules = [
+  ["平台动态", ["ads", "advertising", "google", "meta", "tiktok", "shop", "commerce", "platform", "api", "campaign manager"]],
+  ["品牌案例", ["brand", "campaign", "creative", "activation", "launch", "coca-cola", "nike", "mcdonald", "starbucks"]],
+  ["报告数据", ["report", "study", "research", "data", "trend", "survey", "forecast", "insight"]],
+  ["创意观点", ["creative", "creator", "social", "content", "culture", "influencer", "storytelling"]],
+  ["行业趋势", ["marketing", "consumer", "retail", "media", "agency", "growth", "strategy"]]
+];
+
+const marketingKeywords = [
+  "marketing", "brand", "advertising", "campaign", "consumer", "retail", "commerce", "social",
+  "creator", "media", "agency", "content", "influencer", "customer", "shop", "tiktok", "google",
+  "meta", "ads", "analytics", "measurement", "trend", "report", "creative", "growth"
+];
+
+async function main() {
+  const sources = JSON.parse(await readFile(SOURCES_PATH, "utf8"));
+  const existing = (await readExisting()).filter((item) => isUsableArticleUrl(item.originalUrl));
+  const existingByUrl = new Map(existing.map((item) => [normalizeUrl(item.originalUrl), item]));
+
+  const fetched = [];
+  for (const source of sources) {
+    try {
+      const entries = await fetchFeed(source);
+      fetched.push(...entries.map((entry) => normalizeEntry(entry, source)));
+      console.log(`Fetched ${entries.length} from ${source.name}`);
+    } catch (error) {
+      console.warn(`Skip ${source.name}: ${error.message}`);
+    }
+  }
+
+  const fresh = dedupeByTitleAndSource(dedupeByUrl(fetched))
+    .filter((item) => isMarketingRelated(item))
+    .filter((item) => isUsableArticleUrl(item.originalUrl))
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
+  const analyzed = [];
+  for (const item of fresh) {
+    const old = existingByUrl.get(normalizeUrl(item.originalUrl));
+    if (old) {
+      analyzed.push(old);
+      continue;
+    }
+    analyzed.push(await analyzeItem(item));
+  }
+
+  const merged = dedupeByTitleAndSource(dedupeByUrl([...analyzed, ...existing]))
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .slice(0, MAX_ITEMS);
+
+  const payload = {
+    generatedAt: new Date().toISOString(),
+    mode: hasAiKey() ? "ai" : "rules",
+    sources: sources.map(({ name, tier, type, feedUrl }) => ({ name, tier, type, feedUrl })),
+    items: merged
+  };
+
+  const before = await readTextIfExists(OUTPUT_PATH);
+  const next = `${JSON.stringify(payload, null, 2)}\n`;
+  if (stableHash(before) === stableHash(next)) {
+    console.log("No data change.");
+    return;
+  }
+  await writeFile(OUTPUT_PATH, next);
+  console.log(`Wrote ${merged.length} items to public/data.json`);
+}
+
+async function fetchFeed(source) {
+  const response = await fetch(source.feedUrl, {
+    headers: {
+      "user-agent": "MarketingRadarBot/0.1 (+https://marketing-radar.pages.dev)",
+      "accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8"
+    }
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const xml = await response.text();
+  const entries = parseRss(xml);
+  if (!entries.length) throw new Error("no feed entries parsed");
+  return entries;
+}
+
+function parseRss(xml) {
+  const itemBlocks = xml.match(/<item\b[\s\S]*?<\/item>/gi);
+  if (itemBlocks?.length) {
+    return itemBlocks.map((block) => ({
+      title: textFromTag(block, "title"),
+      link: textFromTag(block, "link") || attrFromTag(block, "link", "href"),
+      publishedAt: textFromTag(block, "pubDate") || textFromTag(block, "dc:date"),
+      summary: textFromTag(block, "description") || textFromTag(block, "content:encoded")
+    })).filter((entry) => entry.title && entry.link);
+  }
+
+  const entryBlocks = xml.match(/<entry\b[\s\S]*?<\/entry>/gi) || [];
+  return entryBlocks.map((block) => ({
+    title: textFromTag(block, "title"),
+    link: atomAlternateLink(block) || attrFromTag(block, "link", "href") || textFromTag(block, "link"),
+    publishedAt: textFromTag(block, "published") || textFromTag(block, "updated"),
+    summary: textFromTag(block, "summary") || textFromTag(block, "content")
+  })).filter((entry) => entry.title && entry.link);
+}
+
+function normalizeEntry(entry, source) {
+  const title = cleanText(entry.title);
+  const summary = cleanText(stripHtml(entry.summary || title)).slice(0, 180);
+  const originalUrl = absoluteUrl(entry.link, source.feedUrl);
+  const publishedAt = safeDate(entry.publishedAt);
+  const category = guessCategory(`${title} ${summary}`, source.categoryHint);
+
+  return {
+    id: stableHash(originalUrl).slice(0, 12),
+    title,
+    sourceName: source.name,
+    sourceHandle: source.handle,
+    sourceTier: source.tier,
+    sourceType: source.type,
+    publishedAt,
+    category,
+    score: 60,
+    isFeatured: false,
+    summary,
+    recommendation: "",
+    tags: guessTags(`${title} ${summary}`),
+    entities: guessEntities(title),
+    originalUrl,
+    scores: {
+      spread: 60,
+      reusable: 60,
+      commercial: 60,
+      freshness: freshnessScore(publishedAt),
+      credibility: credibilityScore(source.tier)
+    }
+  };
+}
+
+async function analyzeItem(item) {
+  if (hasAiKey()) {
+    try {
+      return await analyzeWithAi(item);
+    } catch (error) {
+      console.warn(`AI fallback for ${item.title}: ${error.message}`);
+    }
+  }
+  return analyzeWithRules(item);
+}
+
+async function analyzeWithAi(item) {
+  const endpoint = aiEndpoint();
+  const apiKey = aiKey();
+  const prompt = [
+    "你是一个资深营销情报分析员。请分析这条营销/品牌/广告/消费者趋势信息。",
+    "只返回 JSON，不要 Markdown。",
+    "字段：category, summary, recommendation, tags, entities, scores。",
+    "category 必须是：平台动态、品牌案例、行业趋势、报告数据、创意观点 之一。",
+    "scores 包含 spread, reusable, commercial, freshness, credibility，分数 0-100。",
+    `标题：${item.title}`,
+    `来源：${item.sourceName} (${item.sourceTier})`,
+    `原摘要：${item.summary}`
+  ].join("\n");
+
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "authorization": `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model: AI_MODEL,
+      messages: [
+        { role: "system", content: "你只输出严格 JSON。" },
+        { role: "user", content: prompt }
+      ],
+      temperature: 0.2,
+      response_format: { type: "json_object" }
+    })
+  });
+  if (!response.ok) throw new Error(`AI HTTP ${response.status}`);
+  const data = await response.json();
+  const content = data.choices?.[0]?.message?.content;
+  if (!content) throw new Error("empty AI content");
+  const analysis = JSON.parse(content);
+  return finalizeItem(item, analysis);
+}
+
+function analyzeWithRules(item) {
+  const text = `${item.title} ${item.summary}`.toLowerCase();
+  const spread = scoreByWords(text, ["viral", "social", "creator", "influencer", "culture", "campaign"], 58);
+  const reusable = scoreByWords(text, ["case", "strategy", "brand", "creative", "content", "launch"], 62);
+  const commercial = scoreByWords(text, ["ads", "commerce", "retail", "shop", "measurement", "revenue", "customer"], 60);
+  const freshness = freshnessScore(item.publishedAt);
+  const credibility = credibilityScore(item.sourceTier);
+  return finalizeItem(item, {
+    category: item.category,
+    summary: item.summary || `来自 ${item.sourceName} 的营销动态，建议进一步查看原文判断与业务的关联度。`,
+    recommendation: recommendationFor(item.category),
+    tags: item.tags,
+    entities: item.entities,
+    scores: { spread, reusable, commercial, freshness, credibility }
+  });
+}
+
+function finalizeItem(item, analysis) {
+  const scores = {
+    spread: clampScore(analysis.scores?.spread),
+    reusable: clampScore(analysis.scores?.reusable),
+    commercial: clampScore(analysis.scores?.commercial),
+    freshness: clampScore(analysis.scores?.freshness ?? freshnessScore(item.publishedAt)),
+    credibility: clampScore(analysis.scores?.credibility ?? credibilityScore(item.sourceTier))
+  };
+  const baseScore = scores.spread * 0.22 + scores.reusable * 0.24 + scores.commercial * 0.28 + scores.freshness * 0.14 + scores.credibility * 0.12;
+  const finalScore = Math.round(baseScore * tierWeight(item.sourceTier));
+  const category = categories.includes(analysis.category) ? analysis.category : item.category;
+
+  return {
+    ...item,
+    category,
+    score: Math.min(99, finalScore),
+    isFeatured: finalScore >= featuredThreshold(category),
+    summary: cleanText(analysis.summary || item.summary).slice(0, 180),
+    recommendation: cleanText(analysis.recommendation || recommendationFor(category)).slice(0, 160),
+    tags: normalizeList(analysis.tags || item.tags).slice(0, 5),
+    entities: normalizeList(analysis.entities || item.entities).slice(0, 5),
+    scores
+  };
+}
+
+function isMarketingRelated(item) {
+  const text = `${item.title} ${item.summary}`.toLowerCase();
+  return marketingKeywords.some((word) => text.includes(word)) || item.sourceTier === "T1";
+}
+
+function guessCategory(text, fallback = "行业趋势") {
+  const lower = text.toLowerCase();
+  let best = [fallback, 0];
+  for (const [category, words] of keywordRules) {
+    const hits = words.filter((word) => lower.includes(word)).length;
+    if (hits > best[1]) best = [category, hits];
+  }
+  return best[0];
+}
+
+function guessTags(text) {
+  const lower = text.toLowerCase();
+  const tags = [];
+  const dict = [
+    ["AI营销", ["ai", "artificial intelligence", "genai"]],
+    ["广告产品", ["ads", "advertising", "campaign manager"]],
+    ["社媒", ["social", "creator", "influencer"]],
+    ["内容营销", ["content", "storytelling"]],
+    ["电商", ["commerce", "retail", "shop"]],
+    ["消费者趋势", ["consumer", "trend", "insight"]],
+    ["品牌", ["brand", "campaign"]]
+  ];
+  for (const [tag, words] of dict) {
+    if (words.some((word) => lower.includes(word))) tags.push(tag);
+  }
+  return tags.length ? tags : ["营销动态"];
+}
+
+function guessEntities(title) {
+  return title
+    .split(/[：:|,，;；\-–—]/)
+    .map((part) => cleanText(part))
+    .filter((part) => part.length >= 2 && part.length <= 28)
+    .slice(0, 3);
+}
+
+function recommendationFor(category) {
+  const map = {
+    "平台动态": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+    "品牌案例": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+    "行业趋势": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+    "报告数据": "适合进入日报和趋势库，用于支撑策略判断、提案和客户沟通。",
+    "创意观点": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。"
+  };
+  return map[category] || map["行业趋势"];
+}
+
+function featuredThreshold(category) {
+  return {
+    "平台动态": 72,
+    "品牌案例": 76,
+    "行业趋势": 76,
+    "报告数据": 74,
+    "创意观点": 78
+  }[category] || 76;
+}
+
+function tierWeight(tier) {
+  return { T1: 1.12, "T1.5": 1.04, T2: 0.94 }[tier] || 1;
+}
+
+function credibilityScore(tier) {
+  return { T1: 94, "T1.5": 88, T2: 74 }[tier] || 70;
+}
+
+function freshnessScore(iso) {
+  const ageHours = Math.max(0, (Date.now() - new Date(iso).getTime()) / 36e5);
+  if (ageHours < 24) return 92;
+  if (ageHours < 72) return 84;
+  if (ageHours < 168) return 74;
+  if (ageHours < 720) return 62;
+  return 50;
+}
+
+function scoreByWords(text, words, base) {
+  return Math.min(92, base + words.filter((word) => text.includes(word)).length * 6);
+}
+
+function normalizeList(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => cleanText(String(item))).filter(Boolean);
+}
+
+function dedupeByUrl(items) {
+  const seen = new Set();
+  const result = [];
+  for (const item of items) {
+    const key = normalizeUrl(item.originalUrl);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    result.push(item);
+  }
+  return result;
+}
+
+function dedupeByTitleAndSource(items) {
+  const seen = new Set();
+  const result = [];
+  for (const item of items) {
+    const key = `${item.sourceName}::${cleanText(item.title).toLowerCase()}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(item);
+  }
+  return result;
+}
+
+function isUsableArticleUrl(url) {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "www.blogger.com" && parsed.pathname.includes("/feeds/")) return false;
+    return parsed.protocol === "http:" || parsed.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function normalizeUrl(url) {
+  try {
+    const parsed = new URL(url);
+    parsed.hash = "";
+    return parsed.toString().replace(/\/$/, "");
+  } catch {
+    return url || "";
+  }
+}
+
+function absoluteUrl(url, base) {
+  try {
+    return new URL(url, base).toString();
+  } catch {
+    return url;
+  }
+}
+
+function safeDate(value) {
+  const date = value ? new Date(value) : new Date();
+  return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+}
+
+function textFromTag(block, tag) {
+  const escaped = tag.replace(":", "\\:");
+  const match = block.match(new RegExp(`<${escaped}[^>]*>([\\s\\S]*?)<\\/${escaped}>`, "i"));
+  return match ? decodeXml(stripCdata(match[1])) : "";
+}
+
+function attrFromTag(block, tag, attr) {
+  const escaped = tag.replace(":", "\\:");
+  const match = block.match(new RegExp(`<${escaped}[^>]*\\s${attr}=["']([^"']+)["'][^>]*>`, "i"));
+  return match ? decodeXml(match[1]) : "";
+}
+
+function atomAlternateLink(block) {
+  const links = block.match(/<link\b[^>]*>/gi) || [];
+  const alternate = links.find((link) => /rel=["']alternate["']/i.test(link) && /type=["']text\/html["']/i.test(link))
+    || links.find((link) => /rel=["']alternate["']/i.test(link));
+  if (!alternate) return "";
+  const match = alternate.match(/\shref=["']([^"']+)["']/i);
+  return match ? decodeXml(match[1]) : "";
+}
+
+function stripCdata(value) {
+  return value.replace(/^<!\[CDATA\[/, "").replace(/\]\]>$/, "");
+}
+
+function stripHtml(value) {
+  return value.replace(/<[^>]+>/g, " ");
+}
+
+function cleanText(value) {
+  return decodeXml(stripHtml(String(value || ""))).replace(/\s+/g, " ").trim();
+}
+
+function decodeXml(value) {
+  return String(value || "")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'");
+}
+
+function clampScore(value) {
+  const score = Number(value);
+  if (!Number.isFinite(score)) return 60;
+  return Math.max(0, Math.min(100, Math.round(score)));
+}
+
+async function readExisting() {
+  try {
+    const payload = JSON.parse(await readFile(OUTPUT_PATH, "utf8"));
+    return Array.isArray(payload.items) ? payload.items : [];
+  } catch {
+    return [];
+  }
+}
+
+async function readTextIfExists(path) {
+  try {
+    return await readFile(path, "utf8");
+  } catch {
+    return "";
+  }
+}
+
+function stableHash(value) {
+  return createHash("sha256").update(String(value || "")).digest("hex");
+}
+
+function inferAiProvider() {
+  if (process.env.DEEPSEEK_API_KEY) return "deepseek";
+  if (process.env.OPENAI_API_KEY) return "openai";
+  return "none";
+}
+
+function hasAiKey() {
+  return Boolean(aiKey());
+}
+
+function aiKey() {
+  if (AI_PROVIDER === "deepseek") return process.env.DEEPSEEK_API_KEY;
+  if (AI_PROVIDER === "openai") return process.env.OPENAI_API_KEY;
+  return "";
+}
+
+function aiEndpoint() {
+  if (process.env.AI_BASE_URL) return `${process.env.AI_BASE_URL.replace(/\/$/, "")}/chat/completions`;
+  if (AI_PROVIDER === "deepseek") return "https://api.deepseek.com/chat/completions";
+  return "https://api.openai.com/v1/chat/completions";
+}
+
+function defaultModel(provider) {
+  if (provider === "deepseek") return "deepseek-chat";
+  if (provider === "openai") return "gpt-4.1-mini";
+  return "";
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

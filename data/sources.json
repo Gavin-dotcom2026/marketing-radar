@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Marketing Dive",
+    "handle": "@marketingdive",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://www.marketingdive.com/feeds/news/"
+  },
+  {
+    "name": "Google Ads Developer Blog",
+    "handle": "@googleadsdev",
+    "tier": "T1",
+    "type": "平台官方",
+    "categoryHint": "平台动态",
+    "feedUrl": "https://ads-developers.googleblog.com/feeds/posts/default?alt=rss"
+  },
+  {
+    "name": "Think with Google",
+    "handle": "@thinkwithgoogle",
+    "tier": "T1",
+    "type": "平台官方",
+    "categoryHint": "报告数据",
+    "feedUrl": "https://www.thinkwithgoogle.com/rss.xml"
+  }
+]
