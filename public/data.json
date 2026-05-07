@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-07T04:07:37.050Z",
-  "mode": "rules",
+  "generatedAt": "2026-05-07T04:12:00.503Z",
+  "mode": "ai",
   "sources": [
     {
       "name": "SocialBeta",
@@ -57,33 +57,70 @@
   ],
   "items": [
     {
-      "id": "e4153f915c78",
-      "title": "何润东“零成本”翻红：爆款生产权从品牌转移到用户侧? | Morketing跟踪",
+      "id": "25a614e80c30",
+      "title": "雀巢正在建立一套新的“消费者洞察系统” Rita",
       "sourceName": "Morketing",
       "sourceHandle": "@morketing",
       "sourceTier": "T2",
       "sourceType": "营销媒体",
-      "publishedAt": "2026-05-16T16:00:00.000Z",
+      "publishedAt": "2026-05-17T00:00:00.000Z",
       "category": "品牌案例",
-      "score": 62,
+      "score": 70,
       "isFeatured": false,
-      "summary": "何润东“零成本”翻红：爆款生产权从品牌转移到用户侧? | Morketing跟踪 Joe 2026-05-07 10:20 1764 查看详情",
-      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "summary": "雀巢正在建立一套新的“消费者洞察系统”，旨在通过数据驱动的方式更精准地理解消费者需求，优化产品开发和营销策略。该系统整合了多渠道数据，包括社交媒体、购买行为等，以实时追踪消费者偏好变化。",
+      "recommendation": "关注雀巢如何利用该系统提升产品创新效率，可借鉴其数据整合方法。建议其他品牌评估自身数据基础设施，探索类似系统以增强消费者洞察能力。",
       "tags": [
-        "品牌"
+        "雀巢",
+        "消费者洞察",
+        "数据驱动",
+        "营销系统",
+        "品牌案例"
       ],
       "entities": [
-        "何润东“零成本”翻红",
-        "爆款生产权从品牌转移到用户侧?",
-        "Morketing跟踪"
+        "雀巢",
+        "消费者洞察系统"
       ],
-      "originalUrl": "https://www.morketing.com/detail/28382",
+      "originalUrl": "https://www.morketing.com/detail/28388",
       "scores": {
-        "spread": 58,
-        "reusable": 62,
-        "commercial": 60,
-        "freshness": 92,
-        "credibility": 74
+        "spread": 70,
+        "reusable": 85,
+        "commercial": 75,
+        "freshness": 60,
+        "credibility": 80
+      }
+    },
+    {
+      "id": "25dbf2863fe1",
+      "title": "为什么这一次，品牌不愿错过《穿普拉达的女王2》 | Morketing前沿 Rita",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-17T00:00:00.000Z",
+      "category": "品牌案例",
+      "score": 74,
+      "isFeatured": false,
+      "summary": "《穿普拉达的女王2》即将上映，品牌纷纷寻求合作，因为该IP具有强大的时尚影响力和怀旧情怀，能有效触达核心消费群体。",
+      "recommendation": "品牌可考虑与电影进行联名营销，利用其时尚元素和经典角色，推出限定产品或体验活动，以吸引高净值消费者。",
+      "tags": [
+        "穿普拉达的女王2",
+        "电影营销",
+        "时尚IP",
+        "品牌合作",
+        "怀旧营销"
+      ],
+      "entities": [
+        "穿普拉达的女王2",
+        "Morketing",
+        "Rita Zeng"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28386",
+      "scores": {
+        "spread": 85,
+        "reusable": 70,
+        "commercial": 90,
+        "freshness": 60,
+        "credibility": 80
       }
     },
     {
@@ -141,6 +178,36 @@
         "AI Native Club 01期实录"
       ],
       "originalUrl": "https://www.morketing.com/newsflash/28380",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e4153f915c78",
+      "title": "何润东“零成本”翻红：爆款生产权从品牌转移到用户侧? | Morketing跟踪",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-16T16:00:00.000Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "何润东“零成本”翻红：爆款生产权从品牌转移到用户侧? | Morketing跟踪 Joe 2026-05-07 10:20 1764 查看详情",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "何润东“零成本”翻红",
+        "爆款生产权从品牌转移到用户侧?",
+        "Morketing跟踪"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28382",
       "scores": {
         "spread": 58,
         "reusable": 62,
