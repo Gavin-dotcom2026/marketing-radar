@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T04:12:00.503Z",
+  "generatedAt": "2026-05-07T04:15:00.394Z",
   "mode": "ai",
   "sources": [
     {
@@ -56,6 +56,39 @@
     }
   ],
   "items": [
+    {
+      "id": "6d125389bda0",
+      "title": "婴配粉进入减量时代，贝拉米却在反向增长 Rita",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-17T00:00:00.000Z",
+      "category": "品牌案例",
+      "score": 69,
+      "isFeatured": false,
+      "summary": "在婴幼儿配方奶粉市场整体下滑的背景下，贝拉米品牌却实现了逆势增长，表明其品牌策略或产品定位在减量市场中具有竞争优势。",
+      "recommendation": "关注贝拉米的差异化策略，如有机、高端定位或渠道创新，并评估其可复制性。建议竞品分析其增长驱动因素。",
+      "tags": [
+        "婴配粉",
+        "减量市场",
+        "逆势增长",
+        "贝拉米",
+        "品牌案例"
+      ],
+      "entities": [
+        "贝拉米",
+        "婴配粉行业"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28390",
+      "scores": {
+        "spread": 70,
+        "reusable": 60,
+        "commercial": 80,
+        "freshness": 85,
+        "credibility": 75
+      }
+    },
     {
       "id": "25a614e80c30",
       "title": "雀巢正在建立一套新的“消费者洞察系统” Rita",
