@@ -466,25 +466,63 @@ gh workflow run update-data.yml
 curl -fsSL https://marketing-radar.pages.dev/data.json
 ```
 
+## 2026-05-07 更新记录
+
+### 已完成
+
+1. 精选页排序改为 displayRank（score * 0.82 + 时效 * 0.18），全部动态保持时间倒序
+2. 新增 contentTypeMultiplier() 评分调节，压低技术/API 内容，拉高品牌案例
+3. 信源权重压平：T1 1.04 / T1.5 1.02 / T2 1.0
+4. 精选阈值按分类差异化：平台动态 76、品牌案例 72、创意观点 72、行业趋势 74、报告数据 74
+5. 导航栏去掉案例爆文，新增快消/母婴/3C 行业专区（关键词匹配 + 排除规则）
+6. 关于页精简，反馈邮箱 gavin.xu@wppmedia.com
+7. 新增信源：36氪 (RSS) + 爱范儿 (RSS)
+8. AI 二分类质量筛选：DeepSeek 先判断 yes/no，只有 yes 才进入完整分析
+9. 摘要 prompt 强化：要求具体说明谁做了什么、数据、方法，禁止空洞表述
+10. 营销日报增加 AI 今日营销洞察总结（150-200字趋势段落）
+11. Morketing 日期解析修复（跳过 URL 路径中的假日期）
+12. 去掉 Prototype banner
+13. data.json 改为 minified 输出（减小部署体积）
+
+### Cloudflare 部署注意事项
+
+- Cloudflare Account ID: 7446afc62b99f7e9ce7941cbc8e9cc74
+- 如果自动部署后网站 500，通常是 asset cache 损坏
+- 解决方法：本地用 wrangler 强制重新上传
+
+```bash
+CLOUDFLARE_API_TOKEN=xxx npx wrangler pages deploy public --project-name=marketing-radar --skip-caching
+```
+
+### DeepSeek API
+
+- 本地测试需带环境变量：DEEPSEEK_API_KEY=sk-xxx node scripts/update-data.mjs
+- GitHub Actions 里已配好 secrets，自动生效
+- 每次更新数据会调用：1次/条 二分类筛选 + 1次/条 完整分析 + 1次 日报总结
+
 ## 后续可拓展
 
-优先拓展信源：
+### 优先接入信源（RSS 已验证可用）
+
+- 华丽志 luxe.co/feed（美妆时尚，补快消专区）
+- 极客公园 geekpark.net/rss（科技，补 3C 专区）
+
+### 需要 HTML 解析或 RSSHub
 
 - 广告门
 - 刀法
 - 品牌星球
-- Campaign Asia
-- Marketing-Interactive
-- 小红书商业化
-- 巨量算数
-- 巨量引擎
-- 阿里妈妈
-- 腾讯广告
-- QuestMobile
-- Kantar
-- NielsenIQ
+- Campaign Asia（RSS 不可用）
+- 母婴行业观察
 
-注意：
+### 长期规划
+
+- 竞品监控：用户输入关注品牌名，自动高亮聚合
+- 周报邮件推送（Resend 免费额度）
+- 热点预警：关键词频次突增检测
+- 行业日历 + 营销节点提醒
+
+### 加信源注意事项
 
 每加一个信源，都要先本地跑通，确认：
 
@@ -492,5 +530,6 @@ curl -fsSL https://marketing-radar.pages.dev/data.json
 - URL 是真实文章页
 - 不会频繁 403/404
 - 数据不会污染排序
+- 行业专区关键词能正确匹配
 
 再提交上线。
