@@ -1,7 +1,23 @@
 {
-  "generatedAt": "2026-05-07T04:02:15.763Z",
+  "generatedAt": "2026-05-07T04:07:37.050Z",
   "mode": "rules",
   "sources": [
+    {
+      "name": "SocialBeta",
+      "tier": "T2",
+      "type": "营销媒体"
+    },
+    {
+      "name": "数英",
+      "tier": "T2",
+      "type": "营销媒体",
+      "feedUrl": "https://www.digitaling.com/rss"
+    },
+    {
+      "name": "Morketing",
+      "tier": "T2",
+      "type": "营销媒体"
+    },
     {
       "name": "Marketing Dive",
       "tier": "T2",
@@ -19,9 +35,707 @@
       "tier": "T1",
       "type": "平台官方",
       "feedUrl": "https://www.thinkwithgoogle.com/rss.xml"
+    },
+    {
+      "name": "Adweek",
+      "tier": "T2",
+      "type": "营销媒体",
+      "feedUrl": "https://www.adweek.com/feed/"
+    },
+    {
+      "name": "MarTech",
+      "tier": "T2",
+      "type": "营销媒体",
+      "feedUrl": "https://martech.org/feed/"
+    },
+    {
+      "name": "Search Engine Land",
+      "tier": "T2",
+      "type": "营销媒体",
+      "feedUrl": "https://searchengineland.com/feed"
     }
   ],
   "items": [
+    {
+      "id": "e4153f915c78",
+      "title": "何润东“零成本”翻红：爆款生产权从品牌转移到用户侧? | Morketing跟踪",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-16T16:00:00.000Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "何润东“零成本”翻红：爆款生产权从品牌转移到用户侧? | Morketing跟踪 Joe 2026-05-07 10:20 1764 查看详情",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "何润东“零成本”翻红",
+        "爆款生产权从品牌转移到用户侧?",
+        "Morketing跟踪"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28382",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "aea79853cf75",
+      "title": "Morketing·每日监测5.6：LVMH出售多家品牌；OpenAI推出自助广告管理器；抖音集团副总裁称红果短剧收费消息不实；豆包开始收费",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-16T16:00:00.000Z",
+      "category": "平台动态",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Morketing·每日监测5.6：LVMH出售多家品牌；OpenAI推出自助广告管理器；抖音集团副总裁称红果短剧收费消息不实；豆包开始收费 Joe 2026-05-06 09:57 9870",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品",
+        "社媒",
+        "品牌"
+      ],
+      "entities": [
+        "Morketing·每日监测5.6",
+        "LVMH出售多家品牌",
+        "OpenAI推出自助广告管理器"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28379",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "d7bf194486c9",
+      "title": "AI Native时代，新营销到底怎么做? | AI Native Club 01期实录",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-16T16:00:00.000Z",
+      "category": "行业趋势",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "AI Native时代，新营销到底怎么做? | AI Native Club 01期实录 Joe 2026-05-07 09:48 3654 查看详情",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "AI Native时代",
+        "新营销到底怎么做?",
+        "AI Native Club 01期实录"
+      ],
+      "originalUrl": "https://www.morketing.com/newsflash/28380",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e3503b26c348",
+      "title": "本周值得关注的 4 个品牌营销案例 | 案例一周 Vol.394",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "本周值得关注的 4 个品牌营销案例 | 案例一周 Vol.394",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "本周值得关注的 4 个品牌营销案例",
+        "案例一周 Vol.394"
+      ],
+      "originalUrl": "https://socialbeta.com/article/111041",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "8021a87e8a93",
+      "title": "Songmont 邀你漫游「心无所住」品牌展",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Songmont 邀你漫游「心无所住」品牌展",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "Songmont 邀你漫游「心无所住」品牌展"
+      ],
+      "originalUrl": "https://socialbeta.com/campaign/27465",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "69a8870cd0ec",
+      "title": "投票结果 | SocialBeta 案例一周上期回顾（20260502-20260504）",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "品牌案例",
+      "score": 63,
+      "isFeatured": false,
+      "summary": "投票结果 | SocialBeta 案例一周上期回顾（20260502-20260504）",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "社媒",
+        "品牌"
+      ],
+      "entities": [
+        "投票结果",
+        "SocialBeta 案例一周上期回顾（20260502",
+        "20260504）"
+      ],
+      "originalUrl": "https://socialbeta.com/article/111079",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "ea0b0c0b0725",
+      "title": "广告人播客推荐，一份值得收听的行业声音清单",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "平台动态",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "广告人播客推荐，一份值得收听的行业声音清单",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "广告人播客推荐",
+        "一份值得收听的行业声音清单"
+      ],
+      "originalUrl": "https://socialbeta.com/article/111078",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "aadc1b05dcde",
+      "title": "哈啰官宣黄渤为品牌代言人",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "哈啰官宣黄渤为品牌代言人",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "哈啰官宣黄渤为品牌代言人"
+      ],
+      "originalUrl": "https://socialbeta.com/campaign/27445",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "1b344837ceb6",
+      "title": "周生生官宣品牌灵动代言人田曦薇 ​​​",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "周生生官宣品牌灵动代言人田曦薇 ​​​",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "周生生官宣品牌灵动代言人田曦薇 ​​​"
+      ],
+      "originalUrl": "https://socialbeta.com/campaign/27460",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "b74a4c7452e6",
+      "title": "本周值得关注的 6 个品牌营销案例 | 案例一周 Vol.396",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T04:07:31.463Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "本周值得关注的 6 个品牌营销案例 | 案例一周 Vol.396",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "本周值得关注的 6 个品牌营销案例",
+        "案例一周 Vol.396"
+      ],
+      "originalUrl": "https://socialbeta.com/article/111074",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "4a586bd288d5",
+      "title": "由豆包付费想到，AI到底会长成一门什么生意",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T02:36:00.000Z",
+      "category": "行业趋势",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "从免费抢用户，到成本分层与商业化验证的冷酷现实。 免费获客阶段结束，AI&nbsp;应用开始进入 “ 成本分层&nbsp;+&nbsp;用户分层&nbsp;+&nbsp;商业化验证” 阶段。 最近，豆包&nbsp;App Store&nbsp;页面出现了付费订阅信息： 免费基础版之外，可能会有&nbsp;68&nbsp;元/月标准版、200&nbsp;元/月",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "由豆包付费想到",
+        "AI到底会长成一门什么生意"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1497376.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "d91d6422deb1",
+      "title": "AI创业时代，一人公司的七种打开方式",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-07T01:51:00.000Z",
+      "category": "创意观点",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "一人公司的想象空间也仍在不断拓宽。 作者：成昱 2026年开年，“一人公司”（One Person Company，简称OPC）悄然兴起。只要一个创意、一项技术，再借力AI智能体，创业者便可独自运营一家公司，成为名副其实的“超级个体”。 这一全新创业形态的火速走红， 彻底打破了大众长久以来对“开公司”的固化认知。 创业不再意味着要投入大量资金租办公室、搭团队",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "AI创业时代",
+        "一人公司的七种打开方式"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1494681.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "d670040750a2",
+      "title": "Vox Media Welcomes a Bidding War",
+      "sourceName": "Adweek",
+      "sourceHandle": "@adweek",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T19:00:00.000Z",
+      "category": "行业趋势",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "James Murdoch is the latest suitor to eye the empire. What does that mean for the rest of the portfolio?",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.adweek.com/media/vox-media-james-murchoch-bidding-war/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "1d7c74dfc7bb",
+      "title": "Google Analytics Data API adds cross-channel conversion reporting (alpha)",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T15:16:23.000Z",
+      "category": "平台动态",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Developers can now access unified paid and organic conversion data programmatically, though the feature is still in limited alpha.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://searchengineland.com/google-analytics-data-api-adds-cross-channel-conversion-reporting-alpha-476635",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e5f98ad54647",
+      "title": "How to use Call assets, lead forms, and Message assets in Google Ads",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T14:00:00.000Z",
+      "category": "平台动态",
+      "score": 65,
+      "isFeatured": false,
+      "summary": "Are you making it too hard for customers to reach you? Learn three essential ways to get more leads directly from your search ads.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "How to use Call assets",
+        "lead forms"
+      ],
+      "originalUrl": "https://searchengineland.com/google-ads-call-assets-lead-forms-message-assets-476618",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 72,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "98110534e3ea",
+      "title": "Your managed WordPress might be blocking AI bots and you can&#8217;t see it",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T13:30:00.000Z",
+      "category": "平台动态",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "Your SEO tools show nothing wrong. But platform-level limits may be quietly blocking AI systems from accessing and citing your content.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "内容营销"
+      ],
+      "entities": [
+        "t see it"
+      ],
+      "originalUrl": "https://searchengineland.com/managed-wordpress-blocking-ai-bots-476510",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "abda9abf7529",
+      "title": "Twilio launches conversation layer to unify AI and human interactions",
+      "sourceName": "MarTech",
+      "sourceHandle": "@martech",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T13:15:00.000Z",
+      "category": "平台动态",
+      "score": 65,
+      "isFeatured": false,
+      "summary": "New platform capabilities aim to connect data, channels, and agents so customer conversations carry context across every interaction. The post Twilio launches conversation layer to",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://martech.org/twilio-launches-conversation-layer-to-unify-ai-and-human-interactions/",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "9984cd02ad0b",
+      "title": "Google updates links within AI Overviews &#038; AI Mode",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T13:00:00.000Z",
+      "category": "平台动态",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Google says these updates make it \"easy for you to connect with authentic voices and explore useful information across the web.\"",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "AI Mode"
+      ],
+      "originalUrl": "https://searchengineland.com/google-updates-links-within-ai-overviews-ai-mode-476571",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "5bcfe1ceb668",
+      "title": "Why performance marketing needs more than ROAS",
+      "sourceName": "MarTech",
+      "sourceHandle": "@martech",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T12:27:00.000Z",
+      "category": "行业趋势",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Return on ad spend can’t explain growth. Here’s how to evaluate marketing’s true contribution to business outcomes. The post Why performance marketing needs more than ROAS appeared",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://martech.org/why-performance-marketing-needs-more-than-roas/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "335b8a8b22d1",
+      "title": "Your Email A/B test winner might be lying (and it’s costing you)",
+      "sourceName": "MarTech",
+      "sourceHandle": "@martech",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T12:13:00.000Z",
+      "category": "行业趋势",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Why single-metric wins, short test windows, and surface-level analysis in email marketing hold your program back — and what to do instead The post Your Email A/B test winner might",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [],
+      "originalUrl": "https://martech.org/your-email-a-b-test-winner-might-be-lying-and-its-costing-you/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "88b2a8e7a632",
+      "title": "Parked domain monetization 2026: Adapting to the changes by RollerAds",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T11:00:00.000Z",
+      "category": "平台动态",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "In 2025, Google began rolling out significant changes to its Search Partner Network, aimed at improving inventory quality.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品"
+      ],
+      "entities": [],
+      "originalUrl": "https://searchengineland.com/parked-domain-monetization-2026-adapting-to-the-changes-475960",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "6f52cacb806a",
+      "title": "Advertisers Spent $1 Billion on Criteo in Q1, Up 8% Year-Over-Year",
+      "sourceName": "Adweek",
+      "sourceHandle": "@adweek",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T09:50:20.000Z",
+      "category": "行业趋势",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "Still, Criteo's growth numbers remain plagued by two major client losses.",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "Up 8% Year",
+        "Over",
+        "Year"
+      ],
+      "originalUrl": "https://www.adweek.com/commerce/advertisers-spent-1-billion-on-criteo-in-q1-up-8-year-over-year/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "2ea06843661d",
+      "title": "Old Navy Appoints Michael Francis as Chief Customer Officer Amid Turnaround",
+      "sourceName": "Adweek",
+      "sourceHandle": "@adweek",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T09:00:00.000Z",
+      "category": "品牌案例",
+      "score": 65,
+      "isFeatured": false,
+      "summary": "Gap Inc. has brought on veteran brand executive Michael Francis as chief customer officer of Old Navy and head of marketing shared services for the group.",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.adweek.com/brand-marketing/old-navy-appoints-michael-francis-as-chief-customer-officer-amid-turnaround/",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 66,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "ff521d125fd8",
+      "title": "Ziff Davis Buys Four Brands From Recurrent Ventures, Launches a Lifestyle Group",
+      "sourceName": "Adweek",
+      "sourceHandle": "@adweek",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T09:00:00.000Z",
+      "category": "品牌案例",
+      "score": 65,
+      "isFeatured": false,
+      "summary": "The company acquired Dwell, Domino, Business of Home, and PopSci, extending a multiyear roll-up as competitors pull back from the open web.",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "Launches a Lifestyle Group"
+      ],
+      "originalUrl": "https://www.adweek.com/media/ziff-davis-recurrent-ventures-dwell-domino-business-home-popsci/",
+      "scores": {
+        "spread": 58,
+        "reusable": 74,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
     {
       "id": "45c11b138479",
       "title": "Target’s digital chief breaks down the retailer’s creator overhaul",
@@ -47,6 +761,267 @@
         "reusable": 62,
         "commercial": 72,
         "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e60920b88e63",
+      "title": "喜茶的拙趣设计，好学吗？",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T07:00:00.000Z",
+      "category": "平台动态",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "不高级的喜茶设计，很有日常美。 怎么形容一个品牌很火？ 它开始成为一种形容词。 比如“喜茶设计”。 半年前，我们就聊过 出圈的喜茶设计 。半年过后，随着新的设计不断出街，网友对此的讨论热情依然居高不下。 在小红书，#喜茶设计#词条的阅读量已经超900万。其中还出现了不少教学帖，在线分享“喜茶设计怎么做”。 流行的东西必然会引来效仿。“喜茶风”也隐隐有统一茶饮",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "社媒",
+        "品牌"
+      ],
+      "entities": [
+        "喜茶的拙趣设计",
+        "好学吗？"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1494772.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "989b8ab7d85b",
+      "title": "AB InBev Wins Cannes Lions Creative Marketer of the Year for a Historic Third Time",
+      "sourceName": "Adweek",
+      "sourceHandle": "@adweek",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T06:59:47.000Z",
+      "category": "品牌案例",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "Cannes Lions has named AB InBev as its 2026 Creative Marketer of the Year.",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [],
+      "originalUrl": "https://www.adweek.com/creativity/ab-inbev-wins-cannes-lions-creative-marketer-of-the-year-for-a-historic-third-time/",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e8610bdffadd",
+      "title": "招聘频道 - 创意总监 Creative Director（Art/Copy Base）",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T06:39:11.000Z",
+      "category": "创意观点",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "招聘企业: 好旺角 GMKOK 上海 工作区域: 上海静安区 发布时间: 2026-05-06 Job ID: 273664 职位描述 Job Description 这是一条来自“好旺角”的招聘信息 “沿着旧地图到不了新大陆” 好旺角在等 每一个热爱广告的你 前来报到 一起乘风破浪，一起高奏凯歌 一起做广告新大陆的发现者 职位：创意总监（ART&nbsp;",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "招聘频道"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273664.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 68,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "413150a63e79",
+      "title": "项目频道 - 蚂蚁保×无限超越班：一支被平台识别为AI的手搓广告",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T06:22:00.000Z",
+      "category": "平台动态",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "喜报！冠名新一季无限超越班的， 是尊贵的蚂蚁保！ 为此，蚂蚁保打造了两支节目创意中插—— 围绕节目导师刘涛，聚焦医疗险产品“好医保”、储蓄型保险进行拍摄。 同时，希望具备“原生感“，与综艺本身风格融合。 众所周知，《无限超越班》最不缺的就是抓马！ 而保险业务真的 很不抓马 —— 它本质是预防生活中的意外，用来对冲未来的不确定性，是一种长效、缓慢的保障机制。",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "广告产品"
+      ],
+      "entities": [
+        "项目频道",
+        "蚂蚁保×无限超越班",
+        "一支被平台识别为AI的手搓广告"
+      ],
+      "originalUrl": "https://www.digitaling.com/projects/366484.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "3119164096f3",
+      "title": "时隔三年，美年达又换Logo了",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T05:02:00.000Z",
+      "category": "品牌案例",
+      "score": 62,
+      "isFeatured": false,
+      "summary": "让风味成为最直观、最具辨识度的视觉元素。 首发： 标志情报局 原标题：美年达又换LOGO了！ 2023年，百事可乐大刀阔斧的对旗下饮料品牌美年达（Mirinda）进行视觉升级，在原有倾斜的绿色字标上添加了一个活力四射的 M 图形，致敬其历史。 三年后，美年达又一次对品牌视觉与包装进行全面重塑。 目的是在竞争激烈的碳酸饮料市场中，强化产品风味的直观表达，提升货",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "时隔三年",
+        "美年达又换Logo了"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1496529.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 92,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e8e37245cfa1",
+      "title": "巅峰集结，FBIF2026首日回顾！",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T03:42:00.000Z",
+      "category": "品牌案例",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "拆解真实商业案例，沉淀实战干货内容，收获前瞻性趋势参考。 作者：FBIF媒体部 FBIF2026食品饮料创新论坛及FBIF食品创新展（f展）于2026年4月27-29日在杭州国际博览中心举办。3天的FBIF2026将包含 160+位演讲嘉宾，650+展商参展，6000+渠道观众观展，累计将吸引53000+观众观展。 FBIF2026以 “大势可为” 为主题。",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "内容营销",
+        "消费者趋势",
+        "品牌"
+      ],
+      "entities": [
+        "巅峰集结",
+        "FBIF2026首日回顾！"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1496732.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "bb16648f0568",
+      "title": "招聘频道 - 创意文案（CW/SCW）",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T03:14:53.000Z",
+      "category": "创意观点",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "招聘企业: Creatife 介陌创意 上海 工作区域: 上海静安区 发布时间: 2026-05-06 Job ID: 273657 职位描述 Job Description 我们想要这样的你： 仅凭文字就能挑拨人心 给产品整活的文案 任职要求：&nbsp; &nbsp;具备2年以上的多类型文案创作经验，有拿得出手的代表作品。 涉猎广泛，敏感于新兴的年轻现象",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "内容营销"
+      ],
+      "entities": [
+        "招聘频道",
+        "创意文案（CW/SCW）"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273657.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "f2fefc610994",
+      "title": "2026年，如何把风口变成你的机会",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T02:35:00.000Z",
+      "category": "报告数据",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "真正的机会，藏在你本就擅长和世界正在变化的交汇处。 原标题：趋势三棱镜：2026年，如何把“风口”变成你的“机会”？ 谈论“趋势”的重要性并非新鲜事。这个词也于“浪潮”“风口”“赛道”“红利”“机遇”“机会”划上等号。 但真正 属于你的机会、风口或红利 ，往往并不诞生于你所看到的“浪潮”之中，反而蛰伏在那些被大多数人忽略的细微之处—— 它并非宏大缥缈的 “趋",
+      "recommendation": "适合进入日报和趋势库，用于支撑策略判断、提案和客户沟通。",
+      "tags": [
+        "消费者趋势"
+      ],
+      "entities": [
+        "2026年",
+        "如何把风口变成你的机会"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1491713.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "523905527ad1",
+      "title": "好创意总带有一丝「刺痛感」",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-06T01:50:00.000Z",
+      "category": "平台动态",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "曼谷奥美金奖作品《Unfading Love》。 来源： 創意維他命 在创意界，我们常说「泰式广告有三宝： 眼泪、反转、平民感」 。 曼谷奥美（Ogilvy Bangkok）这支ANDY奖金奖作品《Unfading Love》精准地捕捉了泰式广告的精髓。 以下是对这个创意的多维度解读： 1、叙事诡计：一次极具「冒犯性」的开场 大多数关于阿尔兹海默症的广告会选",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "好创意总带有一丝「刺痛感」"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1496347.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
         "credibility": 74
       }
     },
@@ -78,6 +1053,62 @@
       }
     },
     {
+      "id": "9619a6cb722c",
+      "title": "ChatGPT ads expand with self-serve buying",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T18:58:32.000Z",
+      "category": "平台动态",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "ChatGPT ads are expanding with self-serve buying, and improved measurement, a move toward a scalable advertising platform.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "ChatGPT ads expand with self",
+        "serve buying"
+      ],
+      "originalUrl": "https://searchengineland.com/chatgpt-ads-expand-with-self-serve-buying-476539",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 72,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "bcdc485f08b2",
+      "title": "Google expands UCP checkout to main search shopping results",
+      "sourceName": "Search Engine Land",
+      "sourceHandle": "@sengineland",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T18:46:11.000Z",
+      "category": "平台动态",
+      "score": 64,
+      "isFeatured": false,
+      "summary": "UCP-powered checkout initially went live only in AI Mode but it now seems to be available for some retailers in Search.",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "AI营销",
+        "电商"
+      ],
+      "entities": [],
+      "originalUrl": "https://searchengineland.com/google-expands-ucp-checkout-to-main-search-shopping-results-476540",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 72,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
       "id": "8c30fb9c3b60",
       "title": "Introducing Partial Structured Data File Upload",
       "sourceName": "Google Ads Developer Blog",
@@ -101,6 +1132,34 @@
         "commercial": 60,
         "freshness": 84,
         "credibility": 94
+      }
+    },
+    {
+      "id": "ffd943723956",
+      "title": "Martech 2026: AI drives a major industry reset",
+      "sourceName": "MarTech",
+      "sourceHandle": "@martech",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T15:00:00.000Z",
+      "category": "行业趋势",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "Flat growth masks a deeper shift as AI moves to the center of value creation and forces a rethink of how martech stacks are built. The post Martech 2026: AI drives a major industry",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "Martech 2026"
+      ],
+      "originalUrl": "https://martech.org/martech-2026-ai-drives-a-major-industry-reset/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
       }
     },
     {
@@ -158,6 +1217,35 @@
       }
     },
     {
+      "id": "e5d6c5fc22e3",
+      "title": "Marketing on LinkedIn: What you need to know",
+      "sourceName": "MarTech",
+      "sourceHandle": "@martech",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T13:06:00.000Z",
+      "category": "平台动态",
+      "score": 63,
+      "isFeatured": false,
+      "summary": "Your guide to LinkedIn's tools, strategies and best practices. Updated with information about the new off-platform event ads. The post Marketing on LinkedIn: What you need to know",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "Marketing on LinkedIn",
+        "What you need to know"
+      ],
+      "originalUrl": "https://martech.org/linkedin-the-marketers-guide/",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 66,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
       "id": "6bfa47102d5e",
       "title": "Why American Family Insurance made a reality competition series for Hulu",
       "sourceName": "Marketing Dive",
@@ -180,6 +1268,66 @@
       "scores": {
         "spread": 58,
         "reusable": 68,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "0b5441e782db",
+      "title": "品牌祛魅：东鹏0糖、宋柚汁的教训是什么？",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T03:09:00.000Z",
+      "category": "品牌案例",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "消费市场的年轻化，酝酿新的风险与挑战。 作者：陈碧婷 来源： 斑马消费 东鹏0糖特饮、宋柚汁、白象多半袋、今麦郎手打挂面、千禾0添加……最近一年多， 商标文字“擦边”争议愈演愈烈，根本原因何在？ 其实，市场没有变，只是品牌跟不上发展了。 当消费市场处于卖方时代，品牌方掌握话语权，可用过度包装，向消费者赚取超额利润。 而当下，市场处于新旧消费时代的过渡期。 年",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "消费者趋势",
+        "品牌"
+      ],
+      "entities": [
+        "品牌祛魅",
+        "东鹏0糖、宋柚汁的教训是什么？"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1496284.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 84,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "bd1b5706dbb6",
+      "title": "项目频道 - 福建足球文旅广告，好敢拍，一定要看到最后",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-05T02:31:00.000Z",
+      "category": "平台动态",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "视频 闽超开赛，福建文旅又来整新活了。 视频以足球员盯防为线索，串联起福建省内各个地区特色，有泉州的簪花，也有平潭的蓝眼泪。最后环游一圈后，又回到足球赛场，没想到红队换了一位重磅球员登场，蓝队表示“这个我防不住啊，教练”。 通过丝滑转场，在释出闽超比赛信息的同时，很好地展示了福建丰厚的文旅资源，在五一节前吸引新的流量。关键是最后一个转场，成功把视频立意提升到",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品"
+      ],
+      "entities": [
+        "项目频道",
+        "福建足球文旅广告",
+        "好敢拍"
+      ],
+      "originalUrl": "https://www.digitaling.com/projects/366372.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
         "commercial": 60,
         "freshness": 84,
         "credibility": 74
@@ -328,6 +1476,155 @@
       }
     },
     {
+      "id": "3e13f9fc48c0",
+      "title": "项目频道 - 亚朵星球：一种很新的平静",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T03:38:00.000Z",
+      "category": "平台动态",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "夏天就要到了。又一个温度被放大的季节。 太热不好，太凉也不好。温度要均衡，人心才会觉得平静。 如果有一条会“控温”的被子呢？ 最近，亚朵星球「深睡控温被·夏季 Pro3.0」上新。围绕这款可“动态控温”的产品，亚朵星球以“一种很新的平静”为主题，推出一支广告片。 《一种很新的平静》 文案 被子对温度的要求，就和人一样 大大的温度，要小一点 自由的温度，要长一",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "广告产品",
+        "内容营销"
+      ],
+      "entities": [
+        "项目频道",
+        "亚朵星球",
+        "一种很新的平静"
+      ],
+      "originalUrl": "https://www.digitaling.com/projects/365511.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "36cb7e3ecbd5",
+      "title": "社区营造，正在成为商业的新变量",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-04T02:43:00.000Z",
+      "category": "行业趋势",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "商业浪潮中，社区营造何以可能？ 作者/编辑，朱雁南；来源： Mall先生 1961年，简·雅各布斯在《美国大城市的死与生》中提出： 好的街区不是规划师画出来的，而是住在那里的人“过”出来的。 这个观察后来被非盈利组织Project for Public Spaces演绎为一套方法论，用四个维度判断一个地方的品质： 到不到得了 ——这个地方跟周围是连通的还是隔",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "社区营造",
+        "正在成为商业的新变量"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1495444.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "12fb261f8afe",
+      "title": "【营销周报】不「打卡」的年轻人，把旅行当成「情绪」补剂",
+      "sourceName": "SocialBeta",
+      "sourceHandle": "@socialbeta",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-03T07:00:00.000Z",
+      "category": "行业趋势",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "【营销周报】不「打卡」的年轻人，把旅行当成「情绪」补剂",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "【营销周报】不「打卡」的年轻人",
+        "把旅行当成「情绪」补剂"
+      ],
+      "originalUrl": "https://socialbeta.com/article/111072",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "eb3c3f9d1896",
+      "title": "项目频道 - 奥妙×阿森纳：女孩们尽情去户外玩吧，弄脏也没关系",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-03T02:27:00.000Z",
+      "category": "品牌案例",
+      "score": 61,
+      "isFeatured": false,
+      "summary": "联合利华旗下洗涤剂品牌奥妙正与阿森纳足球俱乐部合作开展全球campaign：It Starts Outside（始于户外）。 活动延续奥妙标志性的“Dirt Is Good（弄脏是好事）”品牌理念，聚焦一个具体问题： 女孩正在从户外玩耍中退出，并因此失去通过运动建立自信的机会。 该活动以阿森纳女队球员从未公开的童年照片和亲笔感言为核心物料，让这些职业运动员回",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "AI营销",
+        "品牌"
+      ],
+      "entities": [
+        "项目频道",
+        "奥妙×阿森纳",
+        "女孩们尽情去户外玩吧"
+      ],
+      "originalUrl": "https://www.digitaling.com/projects/366421.html",
+      "scores": {
+        "spread": 64,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "244061b6ac42",
+      "title": "V4“上桌”，DeepSeek的故事更热血了",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-03T01:45:00.000Z",
+      "category": "行业趋势",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "商业化仍是关键。 作者：杨林，编辑：饶霞飞，首发： 听筒Tech DeepSeek，这家被行业视为持有技术极客与执拗气质的公司，结束了它长达15个月的静默。 4月24日，在OpenAI刚秀完肌肉、业内外都在猜测“中国的军团”何时能跟上节奏时，DeepSeek毫无征兆地甩出了“王炸”，DeepSeek V4上线。 在业内看来，V4正在进行激进转身。它的登场，不",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "V4“上桌”",
+        "DeepSeek的故事更热血了"
+      ],
+      "originalUrl": "https://www.digitaling.com/articles/1496599.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
       "id": "2f51ffe3f9ef",
       "title": "New Data Retention Policy for Google Ads starting June 1, 2026",
       "sourceName": "Google Ads Developer Blog",
@@ -353,6 +1650,36 @@
         "commercial": 66,
         "freshness": 74,
         "credibility": 94
+      }
+    },
+    {
+      "id": "6a47a2ec4af8",
+      "title": "项目频道 - 英国汉堡王：跑完马拉松，谁不想这么急头白脸吃一顿",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-05-01T01:12:00.000Z",
+      "category": "品牌案例",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "没有什么比得上马拉松冲线的那一刻。 42.2公里，全凭意志力、耐力支撑。赛后的感受，是极致的满足感之一。但唯有一件事能超越它—— 赛后的第一顿饭。 但还有什么比皇堡更适合的呢？ 英国汉堡王的营销活动“Whopper of a Finish（完美收官皇堡）”，将皇堡定位为赛后终极美食，这是汉堡王“Foodfillment”品牌理念的第二波推广，以强化皇堡能够带",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "项目频道",
+        "英国汉堡王",
+        "跑完马拉松"
+      ],
+      "originalUrl": "https://www.digitaling.com/projects/365714.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
       }
     },
     {
@@ -384,6 +1711,153 @@
       }
     },
     {
+      "id": "2e7c5e09e239",
+      "title": "招聘频道 - 创意组长GH（copy base）",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-30T09:54:56.000Z",
+      "category": "创意观点",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "招聘企业: 中好 上海 工作区域: 上海长宁区 发布时间: 2026-04-30 Job ID: 273650 职位描述 Job Description 职位描述 Job Description 既能单兵作战，又能带领团队独立完成项目 从发想创意到输出提案deck，你是放风筝的手 有沟通能力更有人格魅力：外能征服客户，内能carry 团队 3年以上经验，意味",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "招聘频道",
+        "创意组长GH（copy base）"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273650.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "f7aaa84525e7",
+      "title": "招聘频道 - 资深文案/文案Senior copywriter/ Copywriter",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-30T09:54:24.000Z",
+      "category": "创意观点",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "招聘企业: 中好 上海 工作区域: 上海长宁区 发布时间: 2026-04-30 Job ID: 273643 职位描述 Job Description Art负责美，你负责美得有道理 文字是你的匕首，也是你的风笛 相信人性的洞察，大于华丽的辞藻 相信好的创意可以打破一切边界 2-3年经验， 有社会化营销经验者优先 更多精彩内容请访问 数英网 - 文章频道",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "内容营销",
+        "消费者趋势"
+      ],
+      "entities": [
+        "招聘频道"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273643.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "e64b108c9c36",
+      "title": "招聘频道 - 文案实习生",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-30T09:54:06.000Z",
+      "category": "创意观点",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "招聘企业: 中好 上海 工作区域: 上海长宁区 发布时间: 2026-04-30 Job ID: 273636 职位描述 Job Description 【职位描述】 1.&nbsp;&nbsp;&nbsp;&nbsp; 协助创意、资深文案完成文案工作。如果你的文案足够优秀，完全可以PK掉资深文案，成为属于你自己的出街作品 2.&nbsp;&nbsp;&nb",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "内容营销"
+      ],
+      "entities": [
+        "招聘频道",
+        "文案实习生"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273636.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "87ca8e578eaa",
+      "title": "招聘频道 - 品牌战略咨询顾问 Brand strategy consultant",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-30T09:42:05.000Z",
+      "category": "行业趋势",
+      "score": 63,
+      "isFeatured": false,
+      "summary": "招聘企业: 壹捌零集团 工作区域: 上海长宁区 发布时间: 2026-04-30 Job ID: 273629 职位描述 Job Description 职位概述： 我们正在寻找一位具备深厚品牌战略规划背景的咨询顾问，能够通过专业的行业调研、消费者洞察和战略思考，为各行业领先企业提供前瞻性的品牌战略解决方案。理想的候选人应具备顶尖咨询公司或广告公司品牌战略部",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "广告产品",
+        "消费者趋势",
+        "品牌"
+      ],
+      "entities": [
+        "招聘频道"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273629.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 74,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "a5f919d75981",
+      "title": "招聘频道 - 高级策划经理\\策划经理 （Senior）media manager",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-30T09:25:28.000Z",
+      "category": "平台动态",
+      "score": 60,
+      "isFeatured": false,
+      "summary": "招聘企业: 壹捌零集团 工作区域: 北京朝阳区 发布时间: 2026-04-30 Job ID: 273615 职位描述 Job Description 岗位职责: 1.&nbsp;策略制定与规划:根据品牌需求，制定年度/季度/月度KOL合作策略及内容传播策略； 2.&nbsp;红人挖掘与合作:挖掘各平台(如小红书等)的高潜力KOL/KOC，建立并维护长期良",
+      "recommendation": "这类变化可能影响投放、内容分发或转化链路，建议关注是否需要调整渠道策略。",
+      "tags": [
+        "社媒",
+        "内容营销",
+        "品牌"
+      ],
+      "entities": [
+        "招聘频道"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273615.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 74,
+        "credibility": 74
+      }
+    },
+    {
       "id": "fa5223aa810e",
       "title": "Google Ads API v20 sunset reminder",
       "sourceName": "Google Ads Developer Blog",
@@ -408,6 +1882,64 @@
         "commercial": 66,
         "freshness": 62,
         "credibility": 94
+      }
+    },
+    {
+      "id": "6cacc1a37dd9",
+      "title": "招聘频道 - 创意美术组长/高级美术指导（art base)",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-29T07:15:10.000Z",
+      "category": "创意观点",
+      "score": 58,
+      "isFeatured": false,
+      "summary": "招聘企业: SOULO 上海 工作区域: 上海黄浦区 发布时间: 2026-04-29 Job ID: 273608 职位描述 Job Description 1、在插画/平面设计/C4D/动画等某一领域有强烈的个人视觉风格，善于探索各类视觉边界 2、能够带队完成从创意到执行落地的全过程，主动性强积极者优先 3、具备快速执行力，对效率渴求 4、始终对自己有要",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "营销动态"
+      ],
+      "entities": [
+        "招聘频道",
+        "创意美术组长/高级美术指导（art base)"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273608.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "f1e6f0f06fab",
+      "title": "招聘频道 - 文案",
+      "sourceName": "数英",
+      "sourceHandle": "@digitaling",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-29T07:14:45.000Z",
+      "category": "创意观点",
+      "score": 58,
+      "isFeatured": false,
+      "summary": "招聘企业: SOULO 上海 工作区域: 上海黄浦区 发布时间: 2026-04-29 Job ID: 273601 职位描述 Job Description 职位描述 1、把握创意方向，主导创意发展，启发创意思路； 2、负责部门内部的各项目的文案指导和执行监督； 3、能够独立把控项目整体创意方向，优质完成创意主题及相关衍生发展； 4、准时、优质、高效的完成",
+      "recommendation": "可作为创意会和内容选题输入，重点看观点是否能迁移到当前品牌场景。",
+      "tags": [
+        "内容营销"
+      ],
+      "entities": [
+        "招聘频道",
+        "文案"
+      ],
+      "originalUrl": "https://www.digitaling.com/jobs/273601.html",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 74
       }
     },
     {
@@ -635,6 +2167,66 @@
         "commercial": 66,
         "freshness": 62,
         "credibility": 94
+      }
+    },
+    {
+      "id": "6f54712780c8",
+      "title": "AI营销智见（四）灵狐x科大讯飞专家对话 | 从工具革命到战略重构，探寻AI时代品牌增长确定路径",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-16T16:00:00.000Z",
+      "category": "行业趋势",
+      "score": 58,
+      "isFeatured": false,
+      "summary": "AI营销智见（四）灵狐x科大讯飞专家对话 | 从工具革命到战略重构，探寻AI时代品牌增长确定路径 Setlla 2026-04-02 10:40 74844",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销",
+        "品牌"
+      ],
+      "entities": [
+        "AI营销智见（四）灵狐x科大讯飞专家对话",
+        "从工具革命到战略重构",
+        "探寻AI时代品牌增长确定路径"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28297",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "59497304a38d",
+      "title": "速度、敏捷、多元声音：宝洁眼中的未来品牌公式 Rita",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-04-16T16:00:00.000Z",
+      "category": "品牌案例",
+      "score": 58,
+      "isFeatured": false,
+      "summary": "速度、敏捷、多元声音：宝洁眼中的未来品牌公式 Rita Zeng 2026-04-17 10:14 33432",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "速度、敏捷、多元声音",
+        "宝洁眼中的未来品牌公式 Rita"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28321",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 62,
+        "credibility": 74
       }
     },
     {
@@ -1304,6 +2896,66 @@
         "commercial": 66,
         "freshness": 50,
         "credibility": 94
+      }
+    },
+    {
+      "id": "c428503c54e5",
+      "title": "专访群玉山&爱慕：当内衣开始“上封面”，成熟品牌如何开辟“第二增长曲线”？ Harper",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-03-16T16:00:00.000Z",
+      "category": "品牌案例",
+      "score": 57,
+      "isFeatured": false,
+      "summary": "专访群玉山&爱慕：当内衣开始“上封面”，成熟品牌如何开辟“第二增长曲线”？ Harper Chen 2026-03-27 17:15 72282",
+      "recommendation": "适合拆解其创意机制、媒介节奏和可迁移打法，沉淀为案例库素材。",
+      "tags": [
+        "品牌"
+      ],
+      "entities": [
+        "专访群玉山&爱慕",
+        "当内衣开始“上封面”",
+        "成熟品牌如何开辟“第二增长曲线”？ Harper"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28283",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 74
+      }
+    },
+    {
+      "id": "ea4567aff3e4",
+      "title": "AI营销智见（三）｜对话品效销增长伙伴灵狐CEO金羽中：2026营销进入战略共生时代，技术驱动长期价值",
+      "sourceName": "Morketing",
+      "sourceHandle": "@morketing",
+      "sourceTier": "T2",
+      "sourceType": "营销媒体",
+      "publishedAt": "2026-03-16T16:00:00.000Z",
+      "category": "行业趋势",
+      "score": 57,
+      "isFeatured": false,
+      "summary": "AI营销智见（三）｜对话品效销增长伙伴灵狐CEO金羽中：2026营销进入战略共生时代，技术驱动长期价值 Setlla 2026-03-20 14:54 102102",
+      "recommendation": "可作为选题、客户简报或策略判断的趋势信号，建议结合行业数据继续验证。",
+      "tags": [
+        "AI营销"
+      ],
+      "entities": [
+        "AI营销智见（三）｜对话品效销增长伙伴灵狐CEO金羽中",
+        "2026营销进入战略共生时代",
+        "技术驱动长期价值"
+      ],
+      "originalUrl": "https://www.morketing.com/detail/28265",
+      "scores": {
+        "spread": 58,
+        "reusable": 62,
+        "commercial": 60,
+        "freshness": 50,
+        "credibility": 74
       }
     },
     {

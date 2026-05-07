@@ -10,17 +10,18 @@ const AI_MODEL = process.env.AI_MODEL || defaultModel(AI_PROVIDER);
 const categories = ["平台动态", "品牌案例", "行业趋势", "报告数据", "创意观点"];
 
 const keywordRules = [
-  ["平台动态", ["ads", "advertising", "google", "meta", "tiktok", "shop", "commerce", "platform", "api", "campaign manager"]],
-  ["品牌案例", ["brand", "campaign", "creative", "activation", "launch", "coca-cola", "nike", "mcdonald", "starbucks"]],
-  ["报告数据", ["report", "study", "research", "data", "trend", "survey", "forecast", "insight"]],
-  ["创意观点", ["creative", "creator", "social", "content", "culture", "influencer", "storytelling"]],
-  ["行业趋势", ["marketing", "consumer", "retail", "media", "agency", "growth", "strategy"]]
+  ["平台动态", ["ads", "advertising", "google", "meta", "tiktok", "shop", "commerce", "platform", "api", "campaign manager", "广告", "投放", "平台", "小红书", "抖音", "电商"]],
+  ["品牌案例", ["brand", "campaign", "creative", "activation", "launch", "coca-cola", "nike", "mcdonald", "starbucks", "品牌", "案例", "联名", "官宣", "代言", "上新"]],
+  ["报告数据", ["report", "study", "research", "data", "trend", "survey", "forecast", "insight", "报告", "研究", "数据", "洞察", "趋势"]],
+  ["创意观点", ["creative", "creator", "social", "content", "culture", "influencer", "storytelling", "创意", "文案", "设计", "内容", "社媒"]],
+  ["行业趋势", ["marketing", "consumer", "retail", "media", "agency", "growth", "strategy", "营销", "消费", "增长", "商业", "零售", "行业"]]
 ];
 
 const marketingKeywords = [
   "marketing", "brand", "advertising", "campaign", "consumer", "retail", "commerce", "social",
   "creator", "media", "agency", "content", "influencer", "customer", "shop", "tiktok", "google",
   "meta", "ads", "analytics", "measurement", "trend", "report", "creative", "growth"
+  , "营销", "品牌", "广告", "案例", "消费", "商业", "创意", "文案", "设计", "社媒", "电商", "零售", "增长", "趋势", "报告", "小红书", "抖音"
 ];
 
 async function main() {
@@ -31,7 +32,7 @@ async function main() {
   const fetched = [];
   for (const source of sources) {
     try {
-      const entries = await fetchFeed(source);
+      const entries = source.feedUrl ? await fetchFeed(source) : await fetchHtmlSource(source);
       fetched.push(...entries.map((entry) => normalizeEntry(entry, source)));
       console.log(`Fetched ${entries.length} from ${source.name}`);
     } catch (error) {
@@ -55,6 +56,7 @@ async function main() {
   }
 
   const merged = dedupeByTitleAndSource(dedupeByUrl([...analyzed, ...existing]))
+    .map((item) => ({ ...item, title: cleanSourceTitle(item.title, { name: item.sourceName }) }))
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
     .slice(0, MAX_ITEMS);
 
@@ -73,6 +75,20 @@ async function main() {
   }
   await writeFile(OUTPUT_PATH, next);
   console.log(`Wrote ${merged.length} items to public/data.json`);
+}
+
+async function fetchHtmlSource(source) {
+  const response = await fetch(source.pageUrl, {
+    headers: {
+      "user-agent": "Mozilla/5.0 MarketingRadarBot/0.1 (+https://marketing-radar.pages.dev)",
+      "accept": "text/html,application/xhtml+xml"
+    }
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const html = await response.text();
+  const entries = parseHtmlLinks(html, source);
+  if (!entries.length) throw new Error("no article links parsed");
+  return entries;
 }
 
 async function fetchFeed(source) {
@@ -109,8 +125,42 @@ function parseRss(xml) {
   })).filter((entry) => entry.title && entry.link);
 }
 
+function parseHtmlLinks(html, source) {
+  const includes = source.linkIncludes || [];
+  const seen = new Set();
+  const entries = [];
+  const links = html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi);
+  for (const match of links) {
+    const href = match[1];
+    if (includes.length && !includes.some((part) => href.includes(part))) continue;
+    const title = cleanText(match[2]);
+    if (title.length < 6 || title.length > 120) continue;
+    const link = absoluteUrl(href, source.pageUrl);
+    const key = normalizeUrl(link);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    entries.push({
+      title,
+      link,
+      publishedAt: extractNearbyDate(html, href) || new Date().toISOString(),
+      summary: title
+    });
+    if (entries.length >= 30) break;
+  }
+  return entries;
+}
+
+function extractNearbyDate(html, href) {
+  const index = html.indexOf(href);
+  if (index < 0) return "";
+  const slice = html.slice(Math.max(0, index - 500), Math.min(html.length, index + 500));
+  const match = slice.match(/20\d{2}[-/.年]\d{1,2}[-/.月]\d{1,2}(?:\s+\d{1,2}:\d{2})?/);
+  if (!match) return "";
+  return match[0].replace("年", "-").replace("月", "-").replace("日", "");
+}
+
 function normalizeEntry(entry, source) {
-  const title = cleanText(entry.title);
+  const title = cleanSourceTitle(cleanText(entry.title), source);
   const summary = cleanText(stripHtml(entry.summary || title)).slice(0, 180);
   const originalUrl = absoluteUrl(entry.link, source.feedUrl);
   const publishedAt = safeDate(entry.publishedAt);
@@ -140,6 +190,20 @@ function normalizeEntry(entry, source) {
       credibility: credibilityScore(source.tier)
     }
   };
+}
+
+function cleanSourceTitle(title, source) {
+  let next = title;
+  if (source.name === "数英") {
+    next = next.replace(/^文章频道\s*-\s*/, "");
+  }
+  if (source.name === "Morketing") {
+    next = next
+      .replace(/\s+查看详情$/g, "")
+      .replace(/\s+\S+\s+20\d{2}-\d{1,2}-\d{1,2}\s+\d{1,2}:\d{2}.*$/g, "")
+      .replace(/^20\d{2}-\d{1,2}-\d{1,2}\s+\d{1,2}:\d{2}\s+/, "");
+  }
+  return next.trim();
 }
 
 async function analyzeItem(item) {
@@ -253,12 +317,12 @@ function guessTags(text) {
   const tags = [];
   const dict = [
     ["AI营销", ["ai", "artificial intelligence", "genai"]],
-    ["广告产品", ["ads", "advertising", "campaign manager"]],
-    ["社媒", ["social", "creator", "influencer"]],
-    ["内容营销", ["content", "storytelling"]],
-    ["电商", ["commerce", "retail", "shop"]],
-    ["消费者趋势", ["consumer", "trend", "insight"]],
-    ["品牌", ["brand", "campaign"]]
+    ["广告产品", ["ads", "advertising", "campaign manager", "广告", "投放"]],
+    ["社媒", ["social", "creator", "influencer", "社媒", "小红书", "抖音"]],
+    ["内容营销", ["content", "storytelling", "内容", "文案"]],
+    ["电商", ["commerce", "retail", "shop", "电商", "零售"]],
+    ["消费者趋势", ["consumer", "trend", "insight", "消费", "趋势", "洞察"]],
+    ["品牌", ["brand", "campaign", "品牌", "案例", "联名"]]
   ];
   for (const [tag, words] of dict) {
     if (words.some((word) => lower.includes(word))) tags.push(tag);

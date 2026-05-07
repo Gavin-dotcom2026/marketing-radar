@@ -1,5 +1,31 @@
 [
   {
+    "name": "SocialBeta",
+    "handle": "@socialbeta",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "品牌案例",
+    "pageUrl": "https://socialbeta.com/",
+    "linkIncludes": ["/campaign/", "/article/"]
+  },
+  {
+    "name": "数英",
+    "handle": "@digitaling",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "创意观点",
+    "feedUrl": "https://www.digitaling.com/rss"
+  },
+  {
+    "name": "Morketing",
+    "handle": "@morketing",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "行业趋势",
+    "pageUrl": "https://www.morketing.com/",
+    "linkIncludes": ["/detail/", "/newsflash/"]
+  },
+  {
     "name": "Marketing Dive",
     "handle": "@marketingdive",
     "tier": "T2",
@@ -22,5 +48,29 @@
     "type": "平台官方",
     "categoryHint": "报告数据",
     "feedUrl": "https://www.thinkwithgoogle.com/rss.xml"
+  },
+  {
+    "name": "Adweek",
+    "handle": "@adweek",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "品牌案例",
+    "feedUrl": "https://www.adweek.com/feed/"
+  },
+  {
+    "name": "MarTech",
+    "handle": "@martech",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "平台动态",
+    "feedUrl": "https://martech.org/feed/"
+  },
+  {
+    "name": "Search Engine Land",
+    "handle": "@sengineland",
+    "tier": "T2",
+    "type": "营销媒体",
+    "categoryHint": "平台动态",
+    "feedUrl": "https://searchengineland.com/feed"
   }
 ]
