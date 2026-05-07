@@ -77,7 +77,7 @@ async function main() {
   };
 
   const before = await readTextIfExists(OUTPUT_PATH);
-  const next = `${JSON.stringify(payload, null, 2)}\n`;
+  const next = `${JSON.stringify(payload)}\n`;
   if (stableHash(before) === stableHash(next)) {
     console.log("No data change.");
     return;
