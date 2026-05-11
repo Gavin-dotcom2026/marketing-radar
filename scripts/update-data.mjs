@@ -3,7 +3,8 @@ import { createHash } from "node:crypto";
 
 const SOURCES_PATH = new URL("../data/sources.json", import.meta.url);
 const OUTPUT_PATH = new URL("../public/data.json", import.meta.url);
-const MAX_ITEMS = Number(process.env.MAX_ITEMS || 200);
+const MAX_ITEMS = Number(process.env.MAX_ITEMS || 400);
+const MAX_AGE_MS = Number(process.env.MAX_AGE_DAYS || 14) * 86400000;
 const AI_PROVIDER = process.env.AI_PROVIDER || inferAiProvider();
 const AI_MODEL = process.env.AI_MODEL || defaultModel(AI_PROVIDER);
 
@@ -60,9 +61,14 @@ async function main() {
     analyzed.push(await analyzeItem(item));
   }
 
+  const now = Date.now();
   const merged = dedupeByTitleAndSource(dedupeByUrl([...analyzed, ...existing]))
     .map((item) => ({ ...item, title: cleanSourceTitle(item.title, { name: item.sourceName }) }))
     .map((item) => rescoreItem(item))
+    .filter((item) => {
+      const t = new Date(item.publishedAt).getTime();
+      return Number.isFinite(t) && now - t < MAX_AGE_MS;
+    })
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
     .slice(0, MAX_ITEMS);
 
