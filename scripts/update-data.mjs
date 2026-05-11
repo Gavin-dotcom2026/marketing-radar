@@ -410,7 +410,26 @@ function finalizeItem(item, analysis) {
   };
 }
 
+const noiseTitlePatterns = [
+  /招聘频道/,
+  /^早报[｜|]/,
+  /9点1氪/,
+  /36氪首发/,
+  /恒指|恒生|A股|港股|上证|深证|美股/,
+  /融资\s*[：:]/,
+  /获.{0,8}(?:万|亿|美元|轮).{0,6}融资/,
+  /首发\s*[｜|]/,
+  /国家统计局/,
+  /证券[：:]|研报|研究院/
+];
+
+function isNoiseTitle(title) {
+  if (!title) return false;
+  return noiseTitlePatterns.some((re) => re.test(title));
+}
+
 function isMarketingRelated(item) {
+  if (isNoiseTitle(item.title)) return false;
   const text = `${item.title} ${item.summary}`.toLowerCase();
   return marketingKeywords.some((word) => text.includes(word)) || item.sourceTier === "T1";
 }

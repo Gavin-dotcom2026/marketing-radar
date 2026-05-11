@@ -34,14 +34,6 @@
     "feedUrl": "https://www.marketingdive.com/feeds/news/"
   },
   {
-    "name": "Google Ads Developer Blog",
-    "handle": "@googleadsdev",
-    "tier": "T1",
-    "type": "平台官方",
-    "categoryHint": "平台动态",
-    "feedUrl": "https://ads-developers.googleblog.com/feeds/posts/default?alt=rss"
-  },
-  {
     "name": "Think with Google",
     "handle": "@thinkwithgoogle",
     "tier": "T1",
@@ -66,14 +58,6 @@
     "feedUrl": "https://martech.org/feed/"
   },
   {
-    "name": "Search Engine Land",
-    "handle": "@sengineland",
-    "tier": "T2",
-    "type": "营销媒体",
-    "categoryHint": "平台动态",
-    "feedUrl": "https://searchengineland.com/feed"
-  },
-  {
     "name": "36氪",
     "handle": "@36kr",
     "tier": "T2",
@@ -88,5 +72,37 @@
     "type": "科技媒体",
     "categoryHint": "行业趋势",
     "feedUrl": "https://www.ifanr.com/feed"
+  },
+  {
+    "name": "华丽志",
+    "handle": "@luxeco",
+    "tier": "T2",
+    "type": "时尚快消",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://luxe.co/feed"
+  },
+  {
+    "name": "极客公园",
+    "handle": "@geekpark",
+    "tier": "T2",
+    "type": "科技媒体",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://www.geekpark.net/rss"
+  },
+  {
+    "name": "钛媒体",
+    "handle": "@tmtpost",
+    "tier": "T2",
+    "type": "科技商业",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://www.tmtpost.com/rss.xml"
+  },
+  {
+    "name": "虎嗅",
+    "handle": "@huxiu",
+    "tier": "T2",
+    "type": "科技商业",
+    "categoryHint": "行业趋势",
+    "feedUrl": "https://rss.huxiu.com/"
   }
 ]
