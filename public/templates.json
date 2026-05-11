@@ -1,31 +1,31 @@
 [
   {
-    "id": "yili",
-    "name": "伊利",
+    "id": "deep-blue",
+    "name": "深蓝系",
     "logo": "",
     "primaryColor": "#003D87",
     "accentColor": "#00A0E9",
     "bgColor": "#F8FAFC"
   },
   {
-    "id": "jinlingguan",
-    "name": "金领冠",
+    "id": "crimson-gold",
+    "name": "红金系",
     "logo": "",
     "primaryColor": "#C41230",
     "accentColor": "#C5A24D",
     "bgColor": "#FFFEF8"
   },
   {
-    "id": "xiaomi",
-    "name": "小米",
+    "id": "vivid-orange",
+    "name": "活力橙",
     "logo": "",
     "primaryColor": "#FF6900",
     "accentColor": "#1F1F1F",
     "bgColor": "#FFFFFF"
   },
   {
-    "id": "generic",
-    "name": "通用模板",
+    "id": "minimal-dark",
+    "name": "极简深色",
     "logo": "",
     "primaryColor": "#1a1a2e",
     "accentColor": "#58a6ff",
