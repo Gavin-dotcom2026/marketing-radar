@@ -646,6 +646,7 @@ function renderView() {
     case "fmcg": renderIndustry("fmcg", "fmcgTimeline"); break;
     case "baby": renderIndustry("baby", "babyTimeline"); break;
     case "tech3c": renderIndustry("tech3c", "tech3cTimeline"); break;
+    case "report": renderReportBuilder(); break;
   }
 }
 
@@ -834,4 +835,73 @@ function renderIndustry(industry, containerId) {
   renderTimeline(containerId, list);
 }
 
+// === Report Builder ===
+
+let templates = [];
+let reportState = { templateId: "", selectedIds: new Set(), search: "" };
+
+async function loadTemplates() {
+  try { const res = await fetch("./templates.json"); templates = await res.json(); } catch { templates = []; }
+}
+
+function renderReportBuilder() {
+  const wrapper = $("#reportPreviewWrapper");
+  wrapper.style.display = "none";
+  const builder = $("#reportBuilder");
+  builder.style.display = "";
+  const tplBtns = templates.map((t) => `<button class="rb-tpl-btn ${t.id === reportState.templateId ? 'active' : ''}" data-tpl="${t.id}" style="border-color:${t.primaryColor}"><span class="rb-tpl-dot" style="background:${t.primaryColor}"></span>${t.name}</button>`).join("");
+  let contentHtml = "";
+  if (reportState.templateId) {
+    const rItems = getReportItems();
+    const itemsHtml = rItems.map((item) => `<label class="rb-item ${reportState.selectedIds.has(item.id) ? 'checked' : ''}"><input type="checkbox" ${reportState.selectedIds.has(item.id) ? 'checked' : ''} data-id="${item.id}" /><div class="rb-item-content"><div class="rb-item-title">${item.title}</div><div class="rb-item-meta">${item.sourceName} · ${item.category} · ${item.score}分</div></div></label>`).join("");
+    contentHtml = `<div class="rb-step"><h3>2. 选择内容 <span class="rb-count">${reportState.selectedIds.size} 条已选</span></h3><input class="rb-search" type="search" placeholder="搜索标题/品牌/标签..." value="${reportState.search}" /><div class="rb-items">${itemsHtml}</div></div>`;
+    if (reportState.selectedIds.size > 0) contentHtml += `<div class="rb-step"><button class="report-btn primary" id="rbPreviewBtn">预览日报</button></div>`;
+  }
+  builder.innerHTML = `<div class="rb-step"><h3>1. 选择模板</h3><div class="rb-templates">${tplBtns}</div></div>${contentHtml}`;
+  builder.querySelectorAll(".rb-tpl-btn").forEach((btn) => { btn.addEventListener("click", () => { reportState.templateId = btn.dataset.tpl; renderReportBuilder(); }); });
+  const searchInput = builder.querySelector(".rb-search");
+  if (searchInput) { searchInput.addEventListener("input", (e) => { reportState.search = e.target.value.trim().toLowerCase(); renderReportBuilder(); }); }
+  builder.querySelectorAll("input[type=checkbox]").forEach((cb) => { cb.addEventListener("change", () => { if (cb.checked) reportState.selectedIds.add(cb.dataset.id); else reportState.selectedIds.delete(cb.dataset.id); renderReportBuilder(); }); });
+  const previewBtn = builder.querySelector("#rbPreviewBtn");
+  if (previewBtn) { previewBtn.addEventListener("click", showReportPreview); }
+}
+
+function getReportItems() {
+  let list = items.filter((i) => i.isFeatured).sort((a, b) => b.score - a.score);
+  if (reportState.search) { list = list.filter((i) => { const hay = [i.title, i.sourceName, i.category, i.summary, ...(i.tags || [])].join(" ").toLowerCase(); return hay.includes(reportState.search); }); }
+  return list;
+}
+
+function showReportPreview() {
+  const tpl = templates.find((t) => t.id === reportState.templateId);
+  if (!tpl) return;
+  const selected = items.filter((i) => reportState.selectedIds.has(i.id));
+  if (!selected.length) return;
+  $("#reportBuilder").style.display = "none";
+  const wrapper = $("#reportPreviewWrapper");
+  wrapper.style.display = "";
+  const today = new Date();
+  const dateStr = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2,'0')}.${String(today.getDate()).padStart(2,'0')}`;
+  const cardsHtml = selected.map((item, idx) => `<div style="padding:20px 0;${idx < selected.length - 1 ? 'border-bottom:1px solid #e5e7eb;' : ''}"><div style="font-size:17px;font-weight:600;color:#1a1a2e;line-height:1.4;">${idx + 1}. ${item.title}</div><div style="font-size:13px;color:#6b7280;margin-top:8px;line-height:1.6;">${item.summary}</div>${item.recommendation ? `<div style="font-size:13px;color:${tpl.accentColor};margin-top:8px;line-height:1.5;">💡 ${item.recommendation}</div>` : ""}<div style="font-size:12px;color:#9ca3af;margin-top:8px;">${item.sourceName} · ${item.category} · ${item.score}分</div></div>`).join("");
+  $("#reportPreview").innerHTML = `<div class="rp-page" style="background:${tpl.bgColor};width:750px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;"><div style="background:${tpl.primaryColor};color:#fff;padding:40px 48px;display:flex;align-items:center;gap:20px;">${tpl.logo ? `<img src="${tpl.logo}" style="height:48px;" crossorigin="anonymous" />` : ""}<div><div style="font-size:28px;font-weight:700;">营销日报</div><div style="font-size:14px;opacity:0.8;margin-top:4px;">${dateStr} · 精选 ${selected.length} 条</div></div></div><div style="padding:32px 48px;">${cardsHtml}</div><div style="background:${tpl.primaryColor};color:#fff;padding:20px 48px;font-size:12px;opacity:0.9;text-align:center;">营销雷达 · AI 精选 · marketing-radar.pages.dev</div></div>`;
+  $("#reportBackBtn").onclick = () => { wrapper.style.display = "none"; renderReportBuilder(); };
+  $("#reportDownloadBtn").onclick = exportReport;
+}
+
+async function exportReport() {
+  const page = $("#reportPreview").querySelector(".rp-page");
+  if (!page) return;
+  try {
+    const canvas = await html2canvas(page, { scale: 2, useCORS: true, backgroundColor: null });
+    const link = document.createElement("a");
+    const tpl = templates.find((t) => t.id === reportState.templateId);
+    const today = new Date();
+    const dateStr = `${today.getFullYear()}${String(today.getMonth()+1).padStart(2,'0')}${String(today.getDate()).padStart(2,'0')}`;
+    link.download = `营销日报_${tpl ? tpl.name : ''}_${dateStr}.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  } catch (err) { alert("导出失败：" + err.message); }
+}
+
+loadTemplates();
 init();

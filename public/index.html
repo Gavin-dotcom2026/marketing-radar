@@ -17,6 +17,7 @@
           <button class="nav-btn" data-view="fmcg">快消</button>
           <button class="nav-btn" data-view="baby">母婴</button>
           <button class="nav-btn" data-view="tech3c">3C</button>
+          <button class="nav-btn" data-view="report">生成日报</button>
           <button class="nav-btn" data-view="about">关于</button>
         </nav>
         <span class="login-placeholder" aria-hidden="true">登录</span>
@@ -95,6 +96,24 @@
         <div class="timeline" id="tech3cTimeline"></div>
       </section>
 
+      <!-- 生成日报页 -->
+      <section class="view" id="reportView">
+        <div class="view-header">
+          <h1 class="view-title">生成日报</h1>
+          <p class="view-desc">选择模板和内容，一键生成日报长图</p>
+        </div>
+        <div class="report-builder" id="reportBuilder"></div>
+        <div class="report-preview-wrapper" id="reportPreviewWrapper" style="display:none">
+          <div class="report-actions">
+            <button class="report-btn" id="reportBackBtn">返回编辑</button>
+            <button class="report-btn primary" id="reportDownloadBtn">下载长图</button>
+          </div>
+          <div class="report-preview-scroll">
+            <div id="reportPreview"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- 关于页 -->
       <section class="view" id="aboutView">
         <div class="about-content">
@@ -117,6 +136,7 @@
       </section>
     </main>
 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

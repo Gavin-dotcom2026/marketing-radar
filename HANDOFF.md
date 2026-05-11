@@ -515,6 +515,26 @@ CLOUDFLARE_API_TOKEN=xxx npx wrangler pages deploy public --project-name=marketi
 - Campaign Asia（RSS 不可用）
 - 母婴行业观察
 
+### 日报生成器（已实现）
+
+功能：选择客户模板 → 勾选内容 → 预览 → 下载 750px 长图 PNG
+
+文件：
+- public/templates.json — 客户模板配置（名称、主色、强调色、背景色、logo）
+- public/app.js — renderReportBuilder / showReportPreview / exportReport
+- public/index.html — "生成日报" tab + reportView 容器 + html2canvas CDN
+- public/styles.css — .rb-* / .report-* 样式
+
+当前模板：
+- 伊利：深蓝 #003D87
+- 金领冠：红色 #C41230 + 金色强调
+- 小米：橙色 #FF6900
+- 通用：深色 #1a1a2e + 蓝色强调
+
+如需加 logo：把 PNG 放 public/logos/，改 templates.json 的 logo 字段
+
+依赖：html2canvas（CDN 引入，浏览器端 DOM 转图片）
+
 ### 长期规划
 
 - 竞品监控：用户输入关注品牌名，自动高亮聚合
