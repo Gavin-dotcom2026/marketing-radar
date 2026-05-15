@@ -371,6 +371,7 @@ function rescoreItem(item) {
 }
 
 function contentTypeMultiplier(item, category) {
+  const title = (item.title || "").toLowerCase();
   const text = `${item.title} ${item.summary} ${(item.tags || []).join(" ")}`.toLowerCase();
   const technicalSignals = [
     "api", "developer", "sdk", "structured data", "data api",
@@ -383,12 +384,24 @@ function contentTypeMultiplier(item, category) {
     "联名", "代言", "社媒", "creator", "retail",
     "world cup", "母亲节", "新品", "品牌营销"
   ];
+  const aggregatePatterns = [
+    /一周(案例|营销|品牌|盘点|创意|事件|快讯|要闻|资讯)/,
+    /本周(案例|营销|品牌|盘点|创意|要闻)/,
+    /每周(案例|营销|品牌|盘点)/,
+    /weekly\s+(roundup|recap|wrap|digest|highlights)/,
+    /(本月|每月|月度)(案例|盘点|榜单|回顾)/,
+    /案例\s*精选/, /案例\s*合集/, /案例\s*盘点/,
+    /营销\s*快报/, /营销\s*周报/, /营销\s*简报/,
+    /\d+\s*个(案例|品牌|campaign)/,
+    /top\s*\d+/, /周榜/, /月榜/
+  ];
   let multiplier = 1;
   if (technicalSignals.some((word) => text.includes(word))) multiplier -= 0.18;
   if (marketingValueSignals.some((word) => text.includes(word))) multiplier += 0.12;
   if (category === "品牌案例" || category === "创意观点") multiplier += 0.08;
   if (item.sourceName === "Google Ads Developer Blog") multiplier -= 0.12;
-  return Math.max(0.72, Math.min(1.18, multiplier));
+  if (aggregatePatterns.some((re) => re.test(title))) multiplier -= 0.22;
+  return Math.max(0.6, Math.min(1.18, multiplier));
 }
 
 function finalizeItem(item, analysis) {

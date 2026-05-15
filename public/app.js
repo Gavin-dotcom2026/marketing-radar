@@ -852,18 +852,38 @@ function renderReportBuilder() {
   const tplBtns = templates.map((t) => `<button class="rb-tpl-btn ${t.id === reportState.templateId ? 'active' : ''}" data-tpl="${t.id}" style="border-color:${t.primaryColor}"><span class="rb-tpl-dot" style="background:${t.primaryColor}"></span>${t.name}</button>`).join("");
   let contentHtml = "";
   if (reportState.templateId) {
-    const rItems = getReportItems();
-    const itemsHtml = rItems.map((item) => `<label class="rb-item ${reportState.selectedIds.has(item.id) ? 'checked' : ''}"><input type="checkbox" ${reportState.selectedIds.has(item.id) ? 'checked' : ''} data-id="${item.id}" /><div class="rb-item-content"><div class="rb-item-title">${item.title}</div><div class="rb-item-meta">${item.sourceName} · ${item.category} · ${item.score}分</div></div></label>`).join("");
-    contentHtml = `<div class="rb-step"><h3>2. 选择内容 <span class="rb-count">${reportState.selectedIds.size} 条已选</span></h3><input class="rb-search" type="search" placeholder="搜索标题/品牌/标签..." value="${reportState.search}" /><div class="rb-items">${itemsHtml}</div></div>`;
-    if (reportState.selectedIds.size > 0) contentHtml += `<div class="rb-step"><button class="report-btn primary" id="rbPreviewBtn">预览日报</button></div>`;
+    contentHtml = `<div class="rb-step"><h3>2. 选择内容 <span class="rb-count" id="rbCount">${reportState.selectedIds.size} 条已选</span></h3><input class="rb-search" type="search" placeholder="搜索标题/品牌/标签..." value="${reportState.search}" /><div class="rb-items" id="rbItems"></div></div><div class="rb-step" id="rbPreviewWrap" style="display:${reportState.selectedIds.size > 0 ? '' : 'none'}"><button class="report-btn primary" id="rbPreviewBtn">预览日报</button></div>`;
   }
   builder.innerHTML = `<div class="rb-step"><h3>1. 选择模板</h3><div class="rb-templates">${tplBtns}</div></div>${contentHtml}`;
   builder.querySelectorAll(".rb-tpl-btn").forEach((btn) => { btn.addEventListener("click", () => { reportState.templateId = btn.dataset.tpl; renderReportBuilder(); }); });
   const searchInput = builder.querySelector(".rb-search");
-  if (searchInput) { searchInput.addEventListener("input", (e) => { reportState.search = e.target.value.trim().toLowerCase(); renderReportBuilder(); }); }
-  builder.querySelectorAll("input[type=checkbox]").forEach((cb) => { cb.addEventListener("change", () => { if (cb.checked) reportState.selectedIds.add(cb.dataset.id); else reportState.selectedIds.delete(cb.dataset.id); renderReportBuilder(); }); });
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      reportState.search = e.target.value.trim().toLowerCase();
+      renderReportItems();
+    });
+  }
   const previewBtn = builder.querySelector("#rbPreviewBtn");
   if (previewBtn) { previewBtn.addEventListener("click", showReportPreview); }
+  if (reportState.templateId) renderReportItems();
+}
+
+function renderReportItems() {
+  const container = document.getElementById("rbItems");
+  if (!container) return;
+  const rItems = getReportItems();
+  container.innerHTML = rItems.map((item) => `<label class="rb-item ${reportState.selectedIds.has(item.id) ? 'checked' : ''}"><input type="checkbox" ${reportState.selectedIds.has(item.id) ? 'checked' : ''} data-id="${item.id}" /><div class="rb-item-content"><div class="rb-item-title">${item.title}</div><div class="rb-item-meta">${item.sourceName} · ${item.category} · ${item.score}分</div></div></label>`).join("");
+  container.querySelectorAll("input[type=checkbox]").forEach((cb) => {
+    cb.addEventListener("change", () => {
+      if (cb.checked) reportState.selectedIds.add(cb.dataset.id);
+      else reportState.selectedIds.delete(cb.dataset.id);
+      const countEl = document.getElementById("rbCount");
+      if (countEl) countEl.textContent = `${reportState.selectedIds.size} 条已选`;
+      const previewWrap = document.getElementById("rbPreviewWrap");
+      if (previewWrap) previewWrap.style.display = reportState.selectedIds.size > 0 ? "" : "none";
+      cb.closest(".rb-item").classList.toggle("checked", cb.checked);
+    });
+  });
 }
 
 function getReportItems() {
@@ -882,25 +902,103 @@ function showReportPreview() {
   wrapper.style.display = "";
   const today = new Date();
   const dateStr = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2,'0')}.${String(today.getDate()).padStart(2,'0')}`;
-  const cardsHtml = selected.map((item, idx) => `<div style="padding:20px 0;${idx < selected.length - 1 ? 'border-bottom:1px solid #e5e7eb;' : ''}"><div style="font-size:17px;font-weight:600;color:#1a1a2e;line-height:1.4;">${idx + 1}. ${item.title}</div><div style="font-size:13px;color:#6b7280;margin-top:8px;line-height:1.6;">${item.summary}</div>${item.recommendation ? `<div style="font-size:13px;color:${tpl.accentColor};margin-top:8px;line-height:1.5;">💡 ${item.recommendation}</div>` : ""}<div style="font-size:12px;color:#9ca3af;margin-top:8px;">${item.sourceName} · ${item.category} · ${item.score}分</div></div>`).join("");
-  $("#reportPreview").innerHTML = `<div class="rp-page" style="background:${tpl.bgColor};width:750px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;"><div style="background:${tpl.primaryColor};color:#fff;padding:40px 48px;display:flex;align-items:center;gap:20px;">${tpl.logo ? `<img src="${tpl.logo}" style="height:48px;" crossorigin="anonymous" />` : ""}<div><div style="font-size:28px;font-weight:700;">营销日报</div><div style="font-size:14px;opacity:0.8;margin-top:4px;">${dateStr} · 精选 ${selected.length} 条</div></div></div><div style="padding:32px 48px;">${cardsHtml}</div><div style="background:${tpl.primaryColor};color:#fff;padding:20px 48px;font-size:12px;opacity:0.9;text-align:center;">营销雷达 · AI 精选 · marketing-radar.pages.dev</div></div>`;
+  reportState.previewSelected = selected;
+  reportState.previewTpl = tpl;
+  reportState.previewDateStr = dateStr;
+  reportState.shortUrls = selected.map(() => "");
+  renderPreviewHtml();
   $("#reportBackBtn").onclick = () => { wrapper.style.display = "none"; renderReportBuilder(); };
   $("#reportDownloadBtn").onclick = exportReport;
+  const pdfBtn = $("#reportPdfBtn");
+  if (pdfBtn) pdfBtn.onclick = exportReportPdf;
+  Promise.all(selected.map((s) => s.originalUrl ? shortenUrl(s.originalUrl) : Promise.resolve(""))).then((shorts) => {
+    reportState.shortUrls = shorts;
+    renderPreviewHtml();
+  });
+}
+
+function renderPreviewHtml() {
+  const selected = reportState.previewSelected || [];
+  const tpl = reportState.previewTpl;
+  const dateStr = reportState.previewDateStr;
+  const shorts = reportState.shortUrls || [];
+  if (!tpl) return;
+  const cardsHtml = selected.map((item, idx) => {
+    const sl = shorts[idx];
+    const linkLine = item.originalUrl ? (sl ? ` · 链接：${sl}` : ` · 链接获取中...`) : "";
+    const linkAttr = item.originalUrl ? ` data-link-url="${item.originalUrl}"` : "";
+    return `<div style="padding:20px 0;${idx < selected.length - 1 ? 'border-bottom:1px solid #e5e7eb;' : ''}"><div${linkAttr} style="font-size:17px;font-weight:600;color:#1a1a2e;line-height:1.4;">${idx + 1}. ${item.title}</div><div style="font-size:13px;color:#6b7280;margin-top:8px;line-height:1.6;">${item.summary}</div>${item.recommendation ? `<div style="font-size:13px;color:${tpl.accentColor};margin-top:8px;line-height:1.5;">💡 ${item.recommendation}</div>` : ""}<div style="font-size:12px;color:#9ca3af;margin-top:8px;word-break:break-all;">${item.sourceName} · ${item.category}${linkLine}</div></div>`;
+  }).join("");
+  $("#reportPreview").innerHTML = `<div class="rp-page" style="background:${tpl.bgColor};width:750px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;"><div style="background:${tpl.primaryColor};color:#fff;padding:40px 48px;display:flex;align-items:center;gap:20px;">${tpl.logo ? `<img src="${tpl.logo}" style="height:48px;" crossorigin="anonymous" />` : ""}<div><div style="font-size:28px;font-weight:700;">营销日报</div><div style="font-size:14px;opacity:0.8;margin-top:4px;">${dateStr} · 精选 ${selected.length} 条</div></div></div><div style="padding:32px 48px;">${cardsHtml}</div><div style="background:${tpl.primaryColor};color:#fff;padding:20px 48px;font-size:12px;opacity:0.9;text-align:center;">营销雷达 · AI 精选 · marketing-radar.pages.dev</div></div>`;
+}
+
+async function shortenUrl(url) {
+  try {
+    const res = await fetch(`https://is.gd/create.php?format=simple&url=${encodeURIComponent(url)}`);
+    const text = (await res.text()).trim();
+    if (text.startsWith("http")) return text;
+  } catch (e) {}
+  try {
+    const u = new URL(url);
+    const path = u.pathname.length > 20 ? u.pathname.slice(0, 17) + "..." : u.pathname;
+    return u.host + path;
+  } catch (e) { return url.length > 40 ? url.slice(0, 37) + "..." : url; }
 }
 
 async function exportReport() {
   const page = $("#reportPreview").querySelector(".rp-page");
-  if (!page) return;
+  if (!page) { alert("未找到预览，请先点击预览日报"); return; }
+  const btn = $("#reportDownloadBtn");
+  const oldText = btn ? btn.textContent : "";
+  if (btn) { btn.textContent = "导出中..."; btn.disabled = true; }
   try {
-    const canvas = await html2canvas(page, { scale: 2, useCORS: true, backgroundColor: null });
-    const link = document.createElement("a");
+    const canvas = await html2canvas(page, { scale: 2, useCORS: true, allowTaint: true, backgroundColor: null, logging: false });
+    const dataUrl = canvas.toDataURL("image/png");
     const tpl = templates.find((t) => t.id === reportState.templateId);
     const today = new Date();
     const dateStr = `${today.getFullYear()}${String(today.getMonth()+1).padStart(2,'0')}${String(today.getDate()).padStart(2,'0')}`;
-    link.download = `营销日报_${tpl ? tpl.name : ''}_${dateStr}.png`;
-    link.href = canvas.toDataURL("image/png");
+    const filename = `营销日报_${tpl ? tpl.name : ''}_${dateStr}.png`;
+    const link = document.createElement("a");
+    link.download = filename;
+    link.href = dataUrl;
+    document.body.appendChild(link);
     link.click();
-  } catch (err) { alert("导出失败：" + err.message); }
+    document.body.removeChild(link);
+  } catch (err) {
+    console.error(err);
+    alert("导出失败：" + (err.message || err));
+  } finally {
+    if (btn) { btn.textContent = oldText; btn.disabled = false; }
+  }
+}
+
+async function exportReportPdf() {
+  if (!window.jspdf) { alert("PDF 库未加载"); return; }
+  const page = $("#reportPreview").querySelector(".rp-page");
+  if (!page) return;
+  try {
+    const titles = Array.from(page.querySelectorAll("[data-link-url]"));
+    const pageRect = page.getBoundingClientRect();
+    const linkBoxes = titles.map((t) => {
+      const r = t.getBoundingClientRect();
+      return { url: t.getAttribute("data-link-url"), x: r.left - pageRect.left, y: r.top - pageRect.top, w: r.width, h: r.height };
+    });
+    const canvas = await html2canvas(page, { scale: 2, useCORS: true, backgroundColor: null });
+    const imgData = canvas.toDataURL("image/png");
+    const pdfW = 595;
+    const renderScale = pdfW / page.offsetWidth;
+    const totalH = page.offsetHeight * renderScale;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: "pt", format: [pdfW, totalH] });
+    doc.addImage(imgData, "PNG", 0, 0, pdfW, totalH);
+    linkBoxes.forEach((b) => {
+      doc.link(b.x * renderScale, b.y * renderScale, b.w * renderScale, b.h * renderScale, { url: b.url });
+    });
+    const tpl = templates.find((t) => t.id === reportState.templateId);
+    const today = new Date();
+    const dateStr = `${today.getFullYear()}${String(today.getMonth()+1).padStart(2,'0')}${String(today.getDate()).padStart(2,'0')}`;
+    doc.save(`营销日报_${tpl ? tpl.name : ''}_${dateStr}.pdf`);
+  } catch (err) { alert("PDF 导出失败：" + err.message); }
 }
 
 loadTemplates();
