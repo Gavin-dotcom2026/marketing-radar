@@ -289,7 +289,17 @@ async function isRelevantForMarketers(item) {
 
 async function generateDailySummary(items) {
   if (!hasAiKey()) return "";
-  const featured = items.filter((i) => i.isFeatured).sort((a, b) => b.score - a.score).slice(0, 15);
+  // 只看最近 48 小时新进的精选,避免被老爆款绑架,确保每日总结真的「每日」
+  const recent48h = items
+    .filter((i) => i.isFeatured && Date.now() - new Date(i.publishedAt).getTime() < 48 * 3600 * 1000)
+    .sort((a, b) => b.score - a.score);
+  // 兜底:48h 内不够 8 条时,放宽到 72h 凑够
+  const featured = (recent48h.length >= 8
+    ? recent48h
+    : items
+        .filter((i) => i.isFeatured && Date.now() - new Date(i.publishedAt).getTime() < 72 * 3600 * 1000)
+        .sort((a, b) => b.score - a.score)
+  ).slice(0, 15);
   if (!featured.length) return "";
   const digest = featured.map((i) => `[${i.category}] ${i.title} — ${i.summary.slice(0, 60)}`).join("\n");
   try {
