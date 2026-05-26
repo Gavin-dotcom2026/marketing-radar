@@ -31,13 +31,36 @@ async function main() {
   const existingByUrl = new Map(existing.map((item) => [normalizeUrl(item.originalUrl), item]));
 
   const fetched = [];
+  const sourceHealth = [];
   for (const source of sources) {
+    const start = Date.now();
     try {
       const entries = source.feedUrl ? await fetchFeed(source) : await fetchHtmlSource(source);
       fetched.push(...entries.map((entry) => normalizeEntry(entry, source)));
       console.log(`Fetched ${entries.length} from ${source.name}`);
+      sourceHealth.push({
+        name: source.name,
+        tier: source.tier,
+        type: source.type,
+        kind: source.feedUrl ? "rss" : "html",
+        status: "ok",
+        fetchedCount: entries.length,
+        durationMs: Date.now() - start,
+        checkedAt: new Date().toISOString()
+      });
     } catch (error) {
       console.warn(`Skip ${source.name}: ${error.message}`);
+      sourceHealth.push({
+        name: source.name,
+        tier: source.tier,
+        type: source.type,
+        kind: source.feedUrl ? "rss" : "html",
+        status: "fail",
+        fetchedCount: 0,
+        durationMs: Date.now() - start,
+        error: String(error.message || error).slice(0, 200),
+        checkedAt: new Date().toISOString()
+      });
     }
   }
 
@@ -73,11 +96,14 @@ async function main() {
     .slice(0, MAX_ITEMS);
 
   const dailySummary = await generateDailySummary(merged);
+  const trendObservations = await generateTrendObservations(merged);
 
   const payload = {
     generatedAt: new Date().toISOString(),
     mode: hasAiKey() ? "ai" : "rules",
     dailySummary,
+    trendObservations,
+    sourceHealth,
     sources: sources.map(({ name, tier, type, feedUrl }) => ({ name, tier, type, feedUrl })),
     items: merged
   };
@@ -291,6 +317,78 @@ async function generateDailySummary(items) {
     return (data.choices?.[0]?.message?.content || "").trim();
   } catch {
     return "";
+  }
+}
+
+async function generateTrendObservations(items) {
+  if (!hasAiKey()) return [];
+  // 取最近 14 天的精选案例,用 AI 提炼跨案例趋势
+  const pool = items
+    .filter((i) => i.isFeatured)
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .slice(0, 60);
+  if (pool.length < 8) return [];
+  const digest = pool
+    .map((i, idx) => `${idx + 1}. [${i.category}] ${i.title} — ${(i.summary || "").slice(0, 80)}`)
+    .join("\n");
+  try {
+    const endpoint = aiEndpoint();
+    const apiKey = aiKey();
+    const prompt = [
+      "你是营销行业的高级策略分析师。下面是过去 14 天的营销精选案例。",
+      "任务：从这批案例中提炼 3-5 条**跨案例的共性趋势**(注意:不是单个案例总结,是多个案例共同指向的方向)。",
+      "每条趋势必须满足:",
+      "- 至少有 2 个不同品牌/案例支持(在 evidence 字段列编号)",
+      "- 用一句话点明趋势(标题型,不超过 20 字)",
+      "- 用 50-80 字解释这条趋势是什么、为什么重要",
+      "- 给营销人一条可借鉴的动作建议",
+      "",
+      "只返回 JSON 数组,每个元素包含字段: title (string), description (string), evidence (number[],对应案例编号), implication (string)。",
+      "如果案例同质度不够无法提炼出有支撑的趋势,返回空数组 []。",
+      "",
+      "案例列表:",
+      digest
+    ].join("\n");
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "content-type": "application/json", "authorization": `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: AI_MODEL,
+        messages: [
+          { role: "system", content: "你只输出严格 JSON 数组,不要 Markdown 包裹。" },
+          { role: "user", content: prompt }
+        ],
+        temperature: 0.4,
+        max_tokens: 1500
+      })
+    });
+    if (!response.ok) return [];
+    const data = await response.json();
+    const raw = (data.choices?.[0]?.message?.content || "").trim();
+    const cleaned = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
+    const parsed = JSON.parse(cleaned);
+    if (!Array.isArray(parsed)) return [];
+    // 把 evidence 编号映射回真实案例标题+URL,方便前端展示
+    return parsed.map((t) => ({
+      title: String(t.title || "").slice(0, 60),
+      description: String(t.description || "").slice(0, 300),
+      implication: String(t.implication || "").slice(0, 200),
+      cases: Array.isArray(t.evidence)
+        ? t.evidence
+            .map((n) => pool[Number(n) - 1])
+            .filter(Boolean)
+            .slice(0, 6)
+            .map((it) => ({
+              title: it.title,
+              url: it.originalUrl,
+              source: it.sourceName,
+              category: it.category
+            }))
+        : []
+    })).filter((t) => t.title && t.cases.length >= 2);
+  } catch (error) {
+    console.warn(`Trend generation failed: ${error.message}`);
+    return [];
   }
 }
 

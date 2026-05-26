@@ -12,6 +12,7 @@
         <a class="logo" href="#"><span class="logo-mark">MH</span><span class="logo-text">MARKETING<b>HOT</b></span></a>
         <nav class="nav" aria-label="主要栏目">
           <button class="nav-btn active" data-view="featured">精选</button>
+          <button class="nav-btn" data-view="trends">趋势观察</button>
           <button class="nav-btn" data-view="all">全部动态</button>
           <button class="nav-btn" data-view="daily">营销日报</button>
           <button class="nav-btn" data-view="fmcg">快消</button>
@@ -49,6 +50,15 @@
           <p class="view-desc">AI 自动挑选的高价值营销内容</p>
         </div>
         <div class="timeline" id="featuredTimeline"></div>
+      </section>
+
+      <!-- 趋势观察页 -->
+      <section class="view" id="trendsView">
+        <div class="view-header">
+          <h1 class="view-title">14 天趋势观察</h1>
+          <p class="view-desc">从最近 14 天的精选案例中,AI 自动提炼出的跨案例共性趋势 — 不追单条热点,只看一段时间的共同走向</p>
+        </div>
+        <div class="trends-grid" id="trendsGrid"></div>
       </section>
 
       <!-- 全部动态页 -->
@@ -127,6 +137,10 @@
             <div class="about-block">
               <h3>信息来源</h3>
               <p>SocialBeta · 数英 · Morketing · Marketing Dive · Think with Google · Google Ads Blog · Adweek · MarTech · Search Engine Land</p>
+            </div>
+            <div class="about-block">
+              <h3>信源健康</h3>
+              <div id="sourceHealthList" class="source-health-list"></div>
             </div>
             <div class="about-block">
               <h3>反馈</h3>

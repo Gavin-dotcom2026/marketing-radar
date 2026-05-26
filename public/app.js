@@ -551,10 +551,20 @@ const state = {
   view: "featured",
   category: "全部",
   tier: "all",
-  search: ""
+  search: "",
+  data: null
 };
 
 const $ = (sel) => document.querySelector(sel);
+
+function escapeHtml(str) {
+  return String(str ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 async function init() {
   await loadLiveData();
@@ -574,6 +584,7 @@ async function loadLiveData() {
     items = payload.items;
     dataMode = "live";
     dailySummary = payload.dailySummary || "";
+    state.data = payload;
     const generatedAt = payload.generatedAt ? new Date(payload.generatedAt) : null;
     const modeLabel = payload.mode === "ai" ? "AI 分析" : "规则分析";
     $("#dataStatus").textContent = generatedAt
@@ -635,19 +646,83 @@ function switchView(view) {
 function updateControlsVisibility() {
   const show = state.view === "featured" || state.view === "all";
   $("#globalControls").style.display = show ? "" : "none";
+  if (state.view === "about") renderSourceHealth();
 }
 
 
 function renderView() {
   switch (state.view) {
     case "featured": renderTimeline("featuredTimeline", getFiltered(true)); break;
+    case "trends": renderTrends(); break;
     case "all": renderTimeline("allTimeline", getFiltered(false)); break;
     case "daily": renderDaily(); break;
     case "fmcg": renderIndustry("fmcg", "fmcgTimeline"); break;
     case "baby": renderIndustry("baby", "babyTimeline"); break;
     case "tech3c": renderIndustry("tech3c", "tech3cTimeline"); break;
     case "report": renderReportBuilder(); break;
+    case "about": renderSourceHealth(); break;
   }
+}
+
+function renderTrends() {
+  const grid = $("#trendsGrid");
+  const trends = state.data?.trendObservations || [];
+  if (!trends.length) {
+    grid.innerHTML = `<div class="trends-empty">暂无趋势数据。需要 14 天内累积至少 8 条精选案例,AI 才会输出共性趋势。</div>`;
+    return;
+  }
+  grid.innerHTML = trends.map((t, i) => `
+    <article class="trend-card">
+      <div class="trend-num">趋势 ${i + 1}</div>
+      <h2 class="trend-title">${escapeHtml(t.title)}</h2>
+      <p class="trend-desc">${escapeHtml(t.description)}</p>
+      <div class="trend-implication">
+        <span class="trend-implication-label">可借鉴动作</span>
+        <p>${escapeHtml(t.implication)}</p>
+      </div>
+      <div class="trend-cases">
+        <div class="trend-cases-label">支持案例 (${t.cases.length})</div>
+        <ul>
+          ${t.cases.map((c) => `
+            <li>
+              <a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a>
+              <span class="trend-case-meta">${escapeHtml(c.source)} · ${escapeHtml(c.category)}</span>
+            </li>
+          `).join("")}
+        </ul>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderSourceHealth() {
+  const list = $("#sourceHealthList");
+  if (!list) return;
+  const health = state.data?.sourceHealth || [];
+  if (!health.length) {
+    list.innerHTML = `<p style="color:#888;font-size:13px">本次抓取暂无信源健康数据(下次 GitHub Actions 跑完会更新)。</p>`;
+    return;
+  }
+  list.innerHTML = `
+    <table class="source-health-table">
+      <thead>
+        <tr><th>信源</th><th>等级</th><th>类型</th><th>状态</th><th>本次抓取</th><th>耗时</th></tr>
+      </thead>
+      <tbody>
+        ${health.map((h) => `
+          <tr class="source-health-row ${h.status === "ok" ? "ok" : "fail"}">
+            <td>${escapeHtml(h.name)}</td>
+            <td>${escapeHtml(h.tier || "")}</td>
+            <td>${escapeHtml(h.kind)}</td>
+            <td><span class="source-status-${h.status}">${h.status === "ok" ? "✓ 正常" : "✗ 失败"}</span></td>
+            <td>${h.fetchedCount} 条</td>
+            <td>${(h.durationMs / 1000).toFixed(1)}s</td>
+          </tr>
+          ${h.error ? `<tr class="source-health-error"><td colspan="6">⚠ ${escapeHtml(h.error)}</td></tr>` : ""}
+        `).join("")}
+      </tbody>
+    </table>
+  `;
 }
 
 function ageHours(iso) {
