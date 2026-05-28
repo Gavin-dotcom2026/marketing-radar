@@ -646,7 +646,6 @@ function switchView(view) {
 function updateControlsVisibility() {
   const show = state.view === "featured" || state.view === "all";
   $("#globalControls").style.display = show ? "" : "none";
-  if (state.view === "about") renderSourceHealth();
 }
 
 
@@ -660,7 +659,6 @@ function renderView() {
     case "baby": renderIndustry("baby", "babyTimeline"); break;
     case "tech3c": renderIndustry("tech3c", "tech3cTimeline"); break;
     case "report": renderReportBuilder(); break;
-    case "about": renderSourceHealth(); break;
   }
 }
 
